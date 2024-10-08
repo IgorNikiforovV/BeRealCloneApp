@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACC99F042CB5B3F6009CE17D /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* Feed.swift */; };
 		ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */; };
 		ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F72CB504E800E19B31 /* ContentView.swift */; };
 		ACEF96FA2CB504EA00E19B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEF96F92CB504EA00E19B31 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACC99F032CB5B3F6009CE17D /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeRealCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeRealCloneAppApp.swift; sourceTree = "<group>"; };
 		ACEF96F72CB504E800E19B31 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */,
 				ACEF96F72CB504E800E19B31 /* ContentView.swift */,
+				ACC99F032CB5B3F6009CE17D /* Feed.swift */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */,
+				ACC99F042CB5B3F6009CE17D /* Feed.swift in Sources */,
 				ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
