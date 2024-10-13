@@ -13,6 +13,16 @@ struct Feed: View {
             Color.black
                 .ignoresSafeArea()
             ZStack {
+                ZStack {
+                    VStack(alignment: .leading) {
+                        Image("back")
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(5)
+                    }
+                }
+            }
+            ZStack {
                 VStack {
                     VStack {
                         HStack {
