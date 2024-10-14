@@ -13,16 +13,48 @@ struct Feed: View {
             Color.black
                 .ignoresSafeArea()
             ZStack {
-                ZStack {
-                    VStack(alignment: .leading) {
-                        Image("back")
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(5)
+                VStack {
+                    VStack {
+                        ZStack {
+                            VStack(alignment: .leading) {
+                                Image("back")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(5)
+                            }
+
+                            VStack {
+                                HStack {
+                                    Image("me")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .border(.black)
+                                        .cornerRadius(2)
+                                        .frame(width: 20, height: 40)
+                                        .padding(.leading)
+                                    Spacer()
+                                }
+                                .padding(.top, 18)
+                                Spacer()
+                            }
+                        }
+                        .frame(height: 100)
+                    }
+                    VStack {
+                        Text("Add a caption...")
+                            .foregroundStyle(.white)
+                            .fontWeight(.semibold)
+                        Text("View Comment")
+                            .foregroundStyle(.gray)
+                        HStack {
+                            Text("Perm, Perm-South • 1 hr late")
+                                .foregroundStyle(.gray)
+                                .font(.system(size: 12))
+                            ThreeDots(size: 3, color: .gray)
+                        }
                     }
                 }
-            }
-            ZStack {
+
                 VStack {
                     VStack {
                         HStack {
