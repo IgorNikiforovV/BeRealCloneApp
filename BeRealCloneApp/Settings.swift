@@ -35,34 +35,39 @@ struct Settings: View {
                     }
 
                     VStack {
-                        RoundedRectangle(cornerRadius: 16)
-                            .frame(width: UIScreen.main.bounds.width * 0.9, height: 90)
-                            .foregroundColor(.white)
-                            .opacity(0.07)
-                            .overlay(
-                                HStack {
-                                    Image("photo")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 60, height: 60)
-                                        .cornerRadius(30)
+                        NavigationLink {
+                            
+                        } label: {
+                            RoundedRectangle(cornerRadius: 16)
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: 90)
+                                .foregroundColor(.white)
+                                .opacity(0.07)
+                                .overlay(
+                                    HStack {
+                                        Image("photo")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 60, height: 60)
+                                            .cornerRadius(30)
 
-                                    VStack(alignment: .leading) {
-                                        Text("Igor")
-                                            .foregroundStyle(.white)
-                                            .fontWeight(.semibold)
-                                            .font(.system(size: 18))
-                                        Text("niki")
-                                            .foregroundStyle(.white)
-                                            .fontWeight(.semibold)
-                                            .font(.system(size: 14))
+                                        VStack(alignment: .leading) {
+                                            Text("Igor")
+                                                .foregroundStyle(.white)
+                                                .fontWeight(.semibold)
+                                                .font(.system(size: 18))
+                                            Text("niki")
+                                                .foregroundStyle(.white)
+                                                .fontWeight(.semibold)
+                                                .font(.system(size: 14))
+                                        }
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.gray)
                                     }
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.gray)
-                                }
-                                    .padding(.horizontal, 18)
-                            )
+                                        .padding(.horizontal, 18)
+                                )
+                        }
+
 
                         VStack(spacing: 6) {
                             HStack {
@@ -282,13 +287,60 @@ struct Settings: View {
                                     })
                                     .padding(.horizontal, width * 0.1)
                                     .frame(height: 30)
+
+                                    Rectangle()
+                                        .frame(width: width * 0.9, height: 0.3)
+                                        .opacity(0.4)
+                                        .foregroundColor(.gray)
+
+                                    NavigationLink(destination: {
+
+                                    }, label: {
+                                        HStack {
+                                            Image(systemName: "info.circle")
+                                                .foregroundColor(.white)
+
+                                            Text("About")
+                                                .foregroundStyle(.white)
+                                                .fontWeight(.semibold)
+
+                                            Spacer()
+
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(.gray)
+                                                .font(.system(size: 14))
+                                        }
+                                    })
+                                    .padding(.horizontal, width * 0.1)
+                                    .frame(height: 30)
                                 }
                             }
                         }
                         .padding(.top, 12)
+
+                        // LOGOUT
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .frame(width: width * 0.9, height: 45)
+                                .foregroundColor(.white)
+                                .opacity(0.07)
+
+                            HStack {
+                                Text("Log Out")
+                                    .foregroundStyle(.red)
+                            }
+                            .padding(.horizontal, width * 0.1)
+                            .frame(height: 30)
+                        }
+                        .padding(.top, 12)
+                        Text("Version 1.23.0 (8356) - Production")
+                            .foregroundStyle(.gray)
+                            .font(.system(size: 12))
+                            .padding(.top, 12)
                     }
                 }
             }
+            .navigationBarHidden(true)
         }
     }
 }
