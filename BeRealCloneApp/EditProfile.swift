@@ -9,6 +9,12 @@ import SwiftUI
 
 struct EditProfile: View {
     @State var width = UIScreen.main.bounds.width
+
+    @State var fullname = ""
+    @State var username = ""
+    @State var bio = ""
+    @State var location = ""
+
     var body: some View {
         VStack {
             ZStack {
@@ -70,7 +76,7 @@ struct EditProfile: View {
                     // MENU
                     VStack {
                         Rectangle()
-                            .frame(width: width * 0.95, height: 0.7)
+                            .frame(width: width * 0.9, height: 0.7)
                             .foregroundColor(.gray)
                             .opacity(0.5)
 
@@ -84,10 +90,92 @@ struct EditProfile: View {
                             .frame(width: width * 0.22)
 
                             HStack {
-                                //TextField
+                                TextField("", text: $fullname)
+                                    .font(.system(size: 16))
+                                    .paceholder(when: fullname.isEmpty) {
+                                        Text("Igor").foregroundStyle(.white)
+                                            .font(.system(size: 16))
+                                    }
+                                    .foregroundColor(.white)
+                                    .padding(.leading, width * 0.05)
+                                Spacer()
+                            }
+                            .frame(width: width * 0.63)
+                        }
+
+                        Rectangle()
+                            .frame(width: width * 0.9, height: 0.7)
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+
+                        HStack {
+                            HStack {
+                                Text("Username")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 16))
+                                Spacer()
+                            }
+                            .frame(width: width * 0.22)
+
+                            HStack {
+                                TextField("", text: $username)
+                                    .font(.system(size: 16))
+                                    .paceholder(when: username.isEmpty) {
+                                        Text("Niki").foregroundStyle(.white)
+                                            .font(.system(size: 16))
+                                    }
+                                    .foregroundColor(.white)
+                                    .padding(.leading, width * 0.05)
+                                Spacer()
+                            }
+                            .frame(width: width * 0.63)
+                        }
+
+                        Rectangle()
+                            .frame(width: width * 0.9, height: 0.7)
+                            .foregroundColor(.gray)
+                            .opacity(0.3)
+
+                        HStack(alignment: .top) {
+                            HStack {
+                                Text("Bio")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 16))
+                                Spacer()
+                            }
+                            .padding(.leading, -4)
+                            .frame(width: width * 0.2)
+
+                            if #available(ios 16, *) {
+                                TextEditor(text: $bio)
+                                    .foregroundColor(.white)
+                                    .background(.black)
+                                    .scrollContentBackground(.hidden)
+                                    .frame(height: 100)
+                                    .padding(.leading, width * 0.05)
+//                                    .overlay (
+//                                        VStack {
+//                                            HStack {
+//                                                if bio.isEmpty {
+//                                                    Text("Bio")
+//                                                        .foregroundStyle(.gray)
+//                                                        .font(.system(size: 16))
+//                                                        .zIndex(1)
+//                                                        .padding(.top, 8)
+//                                                        .padding(.leading, 24)
+//                                                }
+//                                                Spacer()
+//                                            }
+//                                            Spacer()
+//                                        }
+//                                        .padding(.top, -8)
+//                                    )
+                                    .frame(width: width * 0.63)
                             }
                         }
                     }
+                    .padding(.horizontal, width * 0.05)
+                    .padding(.top, 24)
                 }
             }
         }
