@@ -192,8 +192,10 @@ struct EditProfile: View {
                                 TextField("", text: $location)
                                     .font(.system(size: 16))
                                     .paceholder(when: username.isEmpty) {
-                                        Text("Location").foregroundStyle(.gray)
-                                            .font(.system(size: 16))
+                                        if location.isEmpty {
+                                            Text("Location").foregroundStyle(.gray)
+                                                .font(.system(size: 16))
+                                        }
                                     }
                                     .foregroundColor(.white)
                                     .padding(.leading, width * 0.05)
