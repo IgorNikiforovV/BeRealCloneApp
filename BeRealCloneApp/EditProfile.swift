@@ -146,37 +146,67 @@ struct EditProfile: View {
                             .padding(.leading, -4)
                             .frame(width: width * 0.2)
 
-                            if #available(ios 16, *) {
-                                TextEditor(text: $bio)
-                                    .foregroundColor(.white)
-                                    .background(.black)
-                                    .scrollContentBackground(.hidden)
-                                    .frame(height: 100)
-                                    .padding(.leading, width * 0.05)
-//                                    .overlay (
-//                                        VStack {
-//                                            HStack {
-//                                                if bio.isEmpty {
-//                                                    Text("Bio")
-//                                                        .foregroundStyle(.gray)
-//                                                        .font(.system(size: 16))
-//                                                        .zIndex(1)
-//                                                        .padding(.top, 8)
-//                                                        .padding(.leading, 24)
-//                                                }
-//                                                Spacer()
-//                                            }
-//                                            Spacer()
-//                                        }
-//                                        .padding(.top, -8)
-//                                    )
-                                    .frame(width: width * 0.63)
+                            //if #available(ios 16, *) {
+                            TextEditor(text: $bio)
+                                .foregroundColor(.white)
+                                .background(.clear)
+                                .scrollContentBackground(.hidden)
+                                .frame(height: 100)
+                                .padding(.leading, width * 0.05)
+                                .overlay (
+                                    VStack {
+                                        HStack {
+                                            if bio.isEmpty {
+                                                Text("Bio")
+                                                    .foregroundStyle(.gray)
+                                                    .font(.system(size: 16))
+                                                    .zIndex(1)
+                                                    .padding(.top, 8)
+                                                    .padding(.leading, 24)
+                                            }
+                                            Spacer()
+                                        }
+                                        Spacer()
+                                    }
+                                )
+                                .padding(.top, -8)
+                                .frame(width: width * 0.63)
+                            //}
+                        }
+
+                        Rectangle()
+                            .frame(width: width * 0.9, height: 0.7)
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+
+                        HStack {
+                            HStack {
+                                Text("Location")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 16))
+                                Spacer()
                             }
+                            .frame(width: width * 0.22)
+
+                            HStack {
+                                TextField("", text: $location)
+                                    .font(.system(size: 16))
+                                    .paceholder(when: username.isEmpty) {
+                                        Text("Location").foregroundStyle(.gray)
+                                            .font(.system(size: 16))
+                                    }
+                                    .foregroundColor(.white)
+                                    .padding(.leading, width * 0.05)
+                                Spacer()
+                            }
+                            .frame(width: width * 0.63)
                         }
                     }
                     .padding(.horizontal, width * 0.05)
                     .padding(.top, 24)
+                    Spacer()
                 }
+                .padding(.top, UIScreen.main.bounds.height * 0.08)
             }
         }
     }
