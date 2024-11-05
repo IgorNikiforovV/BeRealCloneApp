@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     @Binding var isEditing: Bool
+    @FocusState var focusedField: Int?
 
     var body: some View {
         HStack {
@@ -20,7 +21,8 @@ struct SearchBar: View {
                 .foregroundColor(.white)
                 .background(Color(red: 28/255, green: 28/255, blue: 30/255))
                 .cornerRadius(8)
-                .overlay {
+                .focused($focusedField, equals: 1)
+                .overlay (
                     HStack {
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
@@ -30,12 +32,13 @@ struct SearchBar: View {
                             .padding(.leading, -4)
                         Spacer()
                     }
-                    .padding(.leading, 4)
-                }
+                        .padding(.leading, 4)
+                )
             if isEditing {
                 Button {
-                    self.isEditing = false
                     self.text = ""
+                    self.focusedField = nil
+                    self.isEditing = false
                     UIApplication.shared.endEditing()
                 } label: {
                     Text("Cancel")
@@ -49,6 +52,7 @@ struct SearchBar: View {
         }
         .onTapGesture {
             self.isEditing = true
+            self.focusedField = 1
         }
     }
 }

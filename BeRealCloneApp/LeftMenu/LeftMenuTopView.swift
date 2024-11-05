@@ -20,7 +20,7 @@ struct LeftMenuTopView: View {
                         .foregroundColor(.white)
                 }
 
-                Text("BeReal")
+                Text("BeReal.")
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
                     .font(.system(size: 22))
