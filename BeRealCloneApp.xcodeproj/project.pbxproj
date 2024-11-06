@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */; };
 		AC093D472CBA4022004D3C8B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC093D462CBA4022004D3C8B /* FeedCell.swift */; };
+		AC20BBFE2CDB3BEF006C2806 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */; };
+		AC20BC002CDB3FE4006C2806 /* SuggestionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */; };
 		AC217EF92CD4A8E700C5B45F /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */; };
 		AC217EFB2CD4A96800C5B45F /* LeftMenuTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC217EFA2CD4A96800C5B45F /* LeftMenuTopView.swift */; };
 		AC217EFD2CD4AAEF00C5B45F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDots.swift; sourceTree = "<group>"; };
 		AC093D462CBA4022004D3C8B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellView.swift; sourceTree = "<group>"; };
 		AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		AC217EFA2CD4A96800C5B45F /* LeftMenuTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTopView.swift; sourceTree = "<group>"; };
 		AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -69,8 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */,
+				AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */,
 				AC217EFA2CD4A96800C5B45F /* LeftMenuTopView.swift */,
 				AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */,
+				AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */,
 			);
 			path = LeftMenu;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				AC85FE342CD20430002375D7 /* TimeZoneView.swift in Sources */,
 				ACDACDDE2CBF946900A953C8 /* Profile.swift in Sources */,
 				AC217EFB2CD4A96800C5B45F /* LeftMenuTopView.swift in Sources */,
+				AC20BC002CDB3FE4006C2806 /* SuggestionCellView.swift in Sources */,
+				AC20BBFE2CDB3BEF006C2806 /* Suggestions.swift in Sources */,
 				AC217EF92CD4A8E700C5B45F /* LeftMenu.swift in Sources */,
 				AC217EFD2CD4AAEF00C5B45F /* SearchBar.swift in Sources */,
 				AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */,
