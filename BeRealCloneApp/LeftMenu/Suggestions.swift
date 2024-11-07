@@ -44,6 +44,7 @@ struct Suggestions: View {
                             .padding(.horizontal)
                         }
                         .padding(.horizontal)
+
                     VStack {
                         HStack {
                             Text("ADD YOUR CONTACTS")
@@ -53,10 +54,16 @@ struct Suggestions: View {
                                 Spacer()
                         }
 
-                        
+                        ForEach(1..<16) { _ in
+                            SuggestionCellView()
+                        }
                     }
+                    .padding(.top)
+                    Spacer()
                 }
+                .padding(.top, 20)
             }
+            .padding(.top, 110)
         }
     }
 }
