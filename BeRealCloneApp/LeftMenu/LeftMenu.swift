@@ -16,7 +16,8 @@ struct LeftMenu: View {
                 LeftMenuTopView()
 
                 //Suggestions()
-                FriendsView()
+                //FriendsView()
+                RequestView()
             }
         }
     }

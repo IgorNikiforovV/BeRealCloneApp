@@ -21,6 +21,7 @@
 		AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F85342CCF604100C5A650 /* Extensions.swift */; };
 		ACA603822CC6298A001007C1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA603812CC6298A001007C1 /* Settings.swift */; };
 		ACC99F042CB5B3F6009CE17D /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* Feed.swift */; };
+		ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD356E72CE0888C00EEB956 /* RequestView.swift */; };
 		ACDACDDE2CBF946900A953C8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACDDD2CBF946900A953C8 /* Profile.swift */; };
 		ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACE232CC0DB3200A953C8 /* MemoryView.swift */; };
 		ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */; };
@@ -44,6 +45,7 @@
 		AC8F85342CCF604100C5A650 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ACA603812CC6298A001007C1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		ACC99F032CB5B3F6009CE17D /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		ACD356E72CE0888C00EEB956 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		ACDACDDD2CBF946900A953C8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ACDACE232CC0DB3200A953C8 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeRealCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */,
+				ACD356E72CE0888C00EEB956 /* RequestView.swift */,
 				AC4C59462CDC8B6900202312 /* FriendsView.swift */,
 				AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */,
 				AC217EFA2CD4A96800C5B45F /* LeftMenuTopView.swift */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */,
+				ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */,
 				ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */,
 				ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */,
 				ACA603822CC6298A001007C1 /* Settings.swift in Sources */,
