@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct Feed: View {
+struct FeedView: View {
+    @Binding var mainMenu: MainMenu
+
     var body: some View {
         ZStack {
             Color.black
@@ -64,8 +66,13 @@ struct Feed: View {
                     VStack {
                         VStack {
                             HStack {
-                                Image(systemName: "person.2.fill")
-                                    .foregroundColor(.white)
+                                Button {
+                                    mainMenu = .left
+                                } label: {
+                                    Image(systemName: "person.2.fill")
+                                        .foregroundColor(.white)
+                                }
+
                                 Spacer()
 
                                 Text("BeReal")
@@ -74,10 +81,15 @@ struct Feed: View {
                                     .font(.system(size: 22))
                                 Spacer()
 
-                                Image("photo")
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                                    .cornerRadius(17.5)
+                                Button {
+                                    mainMenu = .profile
+                                } label: {
+                                    Image("photo")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .cornerRadius(17.5)
+                                }
+
                             }
                             .padding(.horizontal)
                             HStack {
@@ -96,5 +108,5 @@ struct Feed: View {
 }
 
 #Preview {
-    Feed()
+    FeedView(mainMenu: .constant(.feed))
 }

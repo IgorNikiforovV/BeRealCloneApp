@@ -11,13 +11,20 @@ struct LeftMenuTopView: View {
     @State var text = ""
     @State var isEditing  = false
 
+    @Binding var mainMenu: MainMenu
+
     var body: some View {
         VStack {
             ZStack {
                 HStack {
                     Spacer()
-                    Image(systemName: "arrow.forward")
-                        .foregroundColor(.white)
+                    Button {
+                        mainMenu = .feed
+                    } label: {
+                        Image(systemName: "arrow.forward")
+                            .foregroundColor(.white)
+                    }
+
                 }
 
                 Text("BeReal.")
@@ -33,5 +40,5 @@ struct LeftMenuTopView: View {
 }
 
 #Preview {
-    LeftMenuTopView()
+    LeftMenuTopView(mainMenu: .constant(.left))
 }
