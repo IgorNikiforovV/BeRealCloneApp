@@ -67,7 +67,9 @@ struct FeedView: View {
                         VStack {
                             HStack {
                                 Button {
-                                    mainMenu = .left
+                                    withAnimation {
+                                        mainMenu = .left
+                                    }
                                 } label: {
                                     Image(systemName: "person.2.fill")
                                         .foregroundColor(.white)
@@ -82,7 +84,9 @@ struct FeedView: View {
                                 Spacer()
 
                                 Button {
-                                    mainMenu = .profile
+                                    withAnimation {
+                                        mainMenu = .profile
+                                    }
                                 } label: {
                                     Image("photo")
                                         .resizable()

@@ -17,7 +17,9 @@ struct Profile: View {
                 VStack {
                     HStack {
                         Button {
-                            mainMenu = .feed
+                            withAnimation {
+                                mainMenu = .feed
+                            }
                         } label: {
                             Image(systemName: "arrow.backward")
                                 .foregroundColor(.white)

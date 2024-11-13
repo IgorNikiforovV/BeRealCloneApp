@@ -19,7 +19,9 @@ struct LeftMenuTopView: View {
                 HStack {
                     Spacer()
                     Button {
-                        mainMenu = .feed
+                        withAnimation {
+                            mainMenu = .feed
+                        }
                     } label: {
                         Image(systemName: "arrow.forward")
                             .foregroundColor(.white)
