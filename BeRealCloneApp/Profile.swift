@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct Profile: View {
+    @Binding var mainMenu: MainMenu
+
     var body: some View {
         VStack {
             ZStack {
                 Color.black.ignoresSafeArea()
                 VStack {
                     HStack {
-                        Image(systemName: "arrow.backward")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20))
-                        
+                        Button {
+                            withAnimation {
+                                mainMenu = .feed
+                            }
+                        } label: {
+                            Image(systemName: "arrow.backward")
+                                .foregroundColor(.white)
+                                .font(.system(size: 20))
+                        }
+
+
                         Spacer()
                         
                         Text("Profile")
@@ -129,5 +138,5 @@ struct Profile: View {
 }
 
 #Preview {
-    Profile()
+    Profile(mainMenu: .constant(.profile))
 }
