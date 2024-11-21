@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Settings: View {
+    @Environment(\.dismiss) var dismiss
+
     @State var width = UIScreen.main.bounds.width
 
     var body: some View {
@@ -23,9 +25,14 @@ struct Settings: View {
                                 .fontWeight(.semibold)
 
                             HStack {
-                                Image(systemName: "arrow.backward")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 20))
+                                Button {
+                                    dismiss()
+                                } label: {
+                                    Image(systemName: "arrow.backward")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 20))
+                                }
+
                                 Spacer()
                             }
                         }
@@ -46,7 +53,7 @@ struct Settings: View {
                                     HStack {
                                         Image("photo")
                                             .resizable()
-                                            .scaledToFit()
+                                            .scaledToFill()
                                             .frame(width: 60, height: 60)
                                             .cornerRadius(30)
 
@@ -79,28 +86,33 @@ struct Settings: View {
                                 Spacer()
                             }
 
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 10)
-                                    .frame(width: width * 0.9, height: 45)
-                                    .foregroundColor(.white)
-                                    .opacity(0.07)
-
-                                HStack {
-                                    Spacer()
-                                    Image(systemName: "calendar")
+                            NavigationLink {
+                                MemoriesView().navigationBarBackButtonHidden()
+                            } label: {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .frame(width: width * 0.9, height: 45)
                                         .foregroundColor(.white)
-                                    Text("Memories")
-                                        .foregroundStyle(.white)
-                                        .fontWeight(.semibold)
-                                    Spacer()
+                                        .opacity(0.07)
 
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.gray)
-                                        .font(.system(size: 14))
+                                    HStack {
+                                        Spacer()
+                                        Image(systemName: "calendar")
+                                            .foregroundColor(.white)
+                                        Text("Memories")
+                                            .foregroundStyle(.white)
+                                            .fontWeight(.semibold)
+                                        Spacer()
+
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.gray)
+                                            .font(.system(size: 14))
+                                    }
+                                    .padding(.horizontal, width * 0.1)
+                                    .frame(height: 30)
                                 }
-                                .padding(.horizontal, width * 0.1)
-                                .frame(height: 30)
                             }
+
                         }
                         .padding(.top, 12)
 

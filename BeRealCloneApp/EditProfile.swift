@@ -10,6 +10,8 @@ import SwiftUI
 struct EditProfile: View {
     @State var width = UIScreen.main.bounds.width
 
+    @Environment(\.dismiss) var dissmiss
+
     @State var fullname = ""
     @State var username = ""
     @State var bio = ""
@@ -22,8 +24,13 @@ struct EditProfile: View {
                 VStack {
                     ZStack {
                         HStack {
-                            Text("Cancel")
-                                .foregroundStyle(.white)
+                            Button {
+                                dissmiss()
+                            } label: {
+                                Text("Cancel")
+                                    .foregroundStyle(.white)
+                            }
+
                             Spacer()
 
                             Text("Save")
