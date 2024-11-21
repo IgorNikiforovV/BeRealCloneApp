@@ -35,7 +35,11 @@ struct Profile: View {
 
                         Spacer()
 
-                        ThreeDots(size: 4, color: .white)
+                        NavigationLink {
+                            SettingsView().navigationBarBackButtonHidden()
+                        } label: {
+                            ThreeDots(size: 4, color: .white)
+                        }
                     }
                     .padding(.horizontal)
                     Spacer()

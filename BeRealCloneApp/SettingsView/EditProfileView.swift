@@ -1,5 +1,5 @@
 //
-//  EditProfile.swift
+//  EditProfileView.swift
 //  BeRealCloneApp
 //
 //  Created by Игорь Никифоров on 24.10.2024.
@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct EditProfile: View {
+struct EditProfileView: View {
     @State var width = UIScreen.main.bounds.width
+
+    @Environment(\.dismiss) var dissmiss
 
     @State var fullname = ""
     @State var username = ""
@@ -22,8 +24,13 @@ struct EditProfile: View {
                 VStack {
                     ZStack {
                         HStack {
-                            Text("Cancel")
-                                .foregroundStyle(.white)
+                            Button {
+                                dissmiss()
+                            } label: {
+                                Text("Cancel")
+                                    .foregroundStyle(.white)
+                            }
+
                             Spacer()
 
                             Text("Save")
@@ -215,5 +222,5 @@ struct EditProfile: View {
 }
 
 #Preview {
-    EditProfile()
+    EditProfileView()
 }
