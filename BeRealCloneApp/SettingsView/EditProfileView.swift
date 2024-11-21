@@ -1,5 +1,5 @@
 //
-//  EditProfile.swift
+//  EditProfileView.swift
 //  BeRealCloneApp
 //
 //  Created by Игорь Никифоров on 24.10.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditProfile: View {
+struct EditProfileView: View {
     @State var width = UIScreen.main.bounds.width
 
     @Environment(\.dismiss) var dissmiss
@@ -222,5 +222,5 @@ struct EditProfile: View {
 }
 
 #Preview {
-    EditProfile()
+    EditProfileView()
 }

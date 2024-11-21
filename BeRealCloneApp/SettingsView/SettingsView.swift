@@ -1,5 +1,5 @@
 //
-//  Settings.swift
+//  SettingsView.swift
 //  BeRealCloneApp
 //
 //  Created by Игорь Никифоров on 21.10.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Settings: View {
+struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
 
     @State var width = UIScreen.main.bounds.width
@@ -43,7 +43,7 @@ struct Settings: View {
 
                     VStack {
                         NavigationLink {
-                            EditProfile().navigationBarBackButtonHidden()
+                            EditProfileView().navigationBarBackButtonHidden()
                         } label: {
                             RoundedRectangle(cornerRadius: 16)
                                 .frame(width: UIScreen.main.bounds.width * 0.9, height: 90)
@@ -134,7 +134,7 @@ struct Settings: View {
 
                                 VStack {
                                     NavigationLink(destination: {
-
+                                        NotificationsView().navigationBarBackButtonHidden()
                                     }, label: {
                                         HStack {
                                             Image(systemName: "square.and.pencil")
@@ -160,7 +160,7 @@ struct Settings: View {
                                         .foregroundColor(.gray)
 
                                     NavigationLink(destination: {
-
+                                        TimeZoneView().navigationBarBackButtonHidden()
                                     }, label: {
                                         HStack {
                                             Image(systemName: "globe.europe.africa.fill")
@@ -186,7 +186,7 @@ struct Settings: View {
                                         .foregroundColor(.gray)
 
                                     NavigationLink(destination: {
-
+                                        OtherView().navigationBarBackButtonHidden()
                                     }, label: {
                                         HStack {
                                             Image(systemName: "hammer.circle")
@@ -280,7 +280,7 @@ struct Settings: View {
                                         .foregroundColor(.gray)
 
                                     NavigationLink(destination: {
-
+                                        HelpView().navigationBarBackButtonHidden()
                                     }, label: {
                                         HStack {
                                             Image(systemName: "lifepreserver")
@@ -358,5 +358,5 @@ struct Settings: View {
 }
 
 #Preview {
-    Settings()
+    SettingsView()
 }
