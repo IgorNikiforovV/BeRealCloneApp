@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    @State var mentions = false
+    @State var comments = false
+    @State var friendRequests = false
+    @State var lateBeReal = false
+    @State var realMojis = false
+
+
     var body: some View {
         VStack {
             ZStack {
@@ -50,15 +57,27 @@ struct NotificationsView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 16))
                     .fontWeight(.semibold)
+
+                    VStack(spacing: 14) {
+
+                        VStack {
+                            NotificationsButtonView(
+                                icon: "person.crop.square.filled.and.at.rectangle",
+                                text: "Mentions",
+                                toggle: $mentions
+                            )
+
+                            HStack {
+                                Text("dilaysila mentioned you  on seanlund's BeReal")
+                                    .foregroundStyle(.gray)
+                                    .font(.system(size: 12))
+                                    .padding(.leading)
+                                Spacer()
+                            }
+                        }
+                    }
                 }
                 .padding(.horizontal)
-
-                VStack(spacing: 14) {
-
-//                    VStack {
-//                        NotificationsButtonView(icon: <#T##String#>, text: <#T##String#>, toggle: <#T##Binding<Bool>#>)
-                   // }
-                }
             }
         }
     }
