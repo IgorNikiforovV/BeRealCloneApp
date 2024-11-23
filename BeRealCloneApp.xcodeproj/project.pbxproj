@@ -17,6 +17,8 @@
 		AC38E2092CCA1FFF00C743B5 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC38E2082CCA1FFF00C743B5 /* EditProfileView.swift */; };
 		AC4C59472CDC8B6900202312 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C59462CDC8B6900202312 /* FriendsView.swift */; };
 		AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C59482CDC8E1700202312 /* FriendCellView.swift */; };
+		AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */; };
+		AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */; };
 		AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */; };
 		AC85FE342CD20430002375D7 /* TimeZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85FE332CD20430002375D7 /* TimeZoneView.swift */; };
 		AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F85342CCF604100C5A650 /* Extensions.swift */; };
@@ -47,6 +49,8 @@
 		AC38E2082CCA1FFF00C743B5 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		AC4C59462CDC8B6900202312 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		AC4C59482CDC8E1700202312 /* FriendCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellView.swift; sourceTree = "<group>"; };
+		AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButtonView.swift; sourceTree = "<group>"; };
+		AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButtonView.swift; sourceTree = "<group>"; };
 		AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		AC85FE332CD20430002375D7 /* TimeZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneView.swift; sourceTree = "<group>"; };
 		AC8F85342CCF604100C5A650 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -95,11 +99,19 @@
 				AC4C59462CDC8B6900202312 /* FriendsView.swift */,
 				AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */,
 				AC217EFA2CD4A96800C5B45F /* LeftMenuTopView.swift */,
-				AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */,
 				AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */,
 				AC4C59482CDC8E1700202312 /* FriendCellView.swift */,
 			);
 			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		AC4C614C2CF19F7400EDC6A2 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */,
+				AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		AC7BBA862CEF3B3000BE8C83 /* SettingsView */ = {
@@ -112,6 +124,7 @@
 				AC38E2082CCA1FFF00C743B5 /* EditProfileView.swift */,
 				AC85FE332CD20430002375D7 /* TimeZoneView.swift */,
 				AC93D8C42CE5D3A700979348 /* OtherView.swift */,
+				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
 				AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */,
 			);
 			path = SettingsView;
@@ -128,6 +141,7 @@
 		ACEF96E92CB504E800E19B31 = {
 			isa = PBXGroup;
 			children = (
+				AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */,
 				ACEF96F42CB504E800E19B31 /* BeRealCloneApp */,
 				ACEF96F32CB504E800E19B31 /* Products */,
 			);
@@ -144,6 +158,7 @@
 		ACEF96F42CB504E800E19B31 /* BeRealCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC4C614C2CF19F7400EDC6A2 /* Items */,
 				AC217EF72CD4A8BD00C5B45F /* LeftMenu */,
 				AC8F85332CCF602B00C5A650 /* Extensions */,
 				AC07E5BA2CBCEB31005A1593 /* Helpers */,
@@ -154,7 +169,6 @@
 				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
-				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
@@ -241,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */,
+				AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */,
 				ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */,
 				ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */,
 				ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */,
@@ -262,6 +277,7 @@
 				AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */,
 				AC093D472CBA4022004D3C8B /* FeedCell.swift in Sources */,
 				ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */,
+				AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */,
 				ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */,
 				AC38E2092CCA1FFF00C743B5 /* EditProfileView.swift in Sources */,
 				AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */,
