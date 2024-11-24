@@ -27,6 +27,7 @@
 		ACA20D322CE86472007283DD /* ChevronButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D312CE86472007283DD /* ChevronButtonView.swift */; };
 		ACA20D352CE9FD6A007283DD /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D342CE9FD69007283DD /* ContactUsView.swift */; };
 		ACA20D382CEB0563007283DD /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D372CEB0563007283DD /* MemoriesView.swift */; };
+		ACA5B1962CF31FF500705A34 /* EnterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5B1952CF31FF500705A34 /* EnterNameView.swift */; };
 		ACA603822CC6298A001007C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA603812CC6298A001007C1 /* SettingsView.swift */; };
 		ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* FeedView.swift */; };
 		ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD356E72CE0888C00EEB956 /* RequestView.swift */; };
@@ -59,6 +60,7 @@
 		ACA20D312CE86472007283DD /* ChevronButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronButtonView.swift; sourceTree = "<group>"; };
 		ACA20D342CE9FD69007283DD /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
 		ACA20D372CEB0563007283DD /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
+		ACA5B1952CF31FF500705A34 /* EnterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameView.swift; sourceTree = "<group>"; };
 		ACA603812CC6298A001007C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ACC99F032CB5B3F6009CE17D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		ACD356E72CE0888C00EEB956 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				AC93D8C42CE5D3A700979348 /* OtherView.swift */,
 				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
 				AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */,
+				ACA5B1952CF31FF500705A34 /* EnterNameView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				ACA20D352CE9FD6A007283DD /* ContactUsView.swift in Sources */,
 				AC4C59472CDC8B6900202312 /* FriendsView.swift in Sources */,
 				AC217EFD2CD4AAEF00C5B45F /* SearchBar.swift in Sources */,
+				ACA5B1962CF31FF500705A34 /* EnterNameView.swift in Sources */,
 				ACA20D322CE86472007283DD /* ChevronButtonView.swift in Sources */,
 				AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */,
 				AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */,
