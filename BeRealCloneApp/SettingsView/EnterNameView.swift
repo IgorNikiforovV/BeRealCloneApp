@@ -52,7 +52,14 @@ struct EnterNameView: View {
                 }
                 .padding(.top, 50)
 
-                WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
+                VStack {
+                    Spacer()
+                    WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
+                        .onChange(of: name) { oldValue, newValue in
+                            print("newValue: \(newValue), oldValue: \(oldValue)")
+                            buttonActive = !newValue.isEmpty
+                        }
+                }
             }
         }
     }
