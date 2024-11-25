@@ -20,6 +20,7 @@
 		AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */; };
 		AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */; };
 		AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */; };
+		AC843D422CF445D5002564BB /* EnterAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC843D412CF445D5002564BB /* EnterAgeView.swift */; };
 		AC85FE342CD20430002375D7 /* TimeZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85FE332CD20430002375D7 /* TimeZoneView.swift */; };
 		AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F85342CCF604100C5A650 /* Extensions.swift */; };
 		AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93D8C42CE5D3A700979348 /* OtherView.swift */; };
@@ -53,6 +54,7 @@
 		AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButtonView.swift; sourceTree = "<group>"; };
 		AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButtonView.swift; sourceTree = "<group>"; };
 		AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		AC843D412CF445D5002564BB /* EnterAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAgeView.swift; sourceTree = "<group>"; };
 		AC85FE332CD20430002375D7 /* TimeZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneView.swift; sourceTree = "<group>"; };
 		AC8F85342CCF604100C5A650 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AC93D8C42CE5D3A700979348 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
+				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
 			);
 			path = BeRealCloneApp;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */,
 				AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */,
+				AC843D422CF445D5002564BB /* EnterAgeView.swift in Sources */,
 				ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */,
 				ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */,
 				ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */,
