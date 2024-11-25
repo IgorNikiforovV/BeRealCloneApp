@@ -173,11 +173,11 @@
 				ACDACDDD2CBF946900A953C8 /* Profile.swift */,
 				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
+				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
-				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
 			);
 			path = BeRealCloneApp;
 			sourceTree = "<group>";
