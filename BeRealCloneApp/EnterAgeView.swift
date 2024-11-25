@@ -138,6 +138,15 @@ struct EnterAgeView: View {
                         .foregroundStyle(Color(red: 70/255, green: 70/255, blue: 73/255) )
                         .fontWeight(.semibold)
                         .font(.system(size: 14))
+
+                    Button {
+
+                    } label: {
+                        WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
+                            .onChange(of: month) { oldValue, newValue in
+                                buttonActive = !newValue.isEmpty
+                            }
+                    }
                 }
             }
         }
