@@ -22,6 +22,7 @@
 		AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */; };
 		AC843D422CF445D5002564BB /* EnterAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC843D412CF445D5002564BB /* EnterAgeView.swift */; };
 		AC85FE342CD20430002375D7 /* TimeZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85FE332CD20430002375D7 /* TimeZoneView.swift */; };
+		AC8CE3002CF64A64008C2DA4 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */; };
 		AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F85342CCF604100C5A650 /* Extensions.swift */; };
 		AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93D8C42CE5D3A700979348 /* OtherView.swift */; };
 		ACA20D302CE862E6007283DD /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D2F2CE862E6007283DD /* HelpView.swift */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8CE3002CF64A64008C2DA4 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +208,9 @@
 			dependencies = (
 			);
 			name = BeRealCloneApp;
+			packageProductDependencies = (
+				AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */,
+			);
 			productName = BeRealCloneApp;
 			productReference = ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +239,9 @@
 				Base,
 			);
 			mainGroup = ACEF96E92CB504E800E19B31;
+			packageReferences = (
+				AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+			);
 			productRefGroup = ACEF96F32CB504E800E19B31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -507,6 +515,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACEF96EA2CB504E800E19B31 /* Project object */;
 }
