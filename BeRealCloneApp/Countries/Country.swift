@@ -27,6 +27,15 @@ public struct Country: Codable {
     }
 
     static let allCountries: [Country] = Bundle.main.decode(file: "countries.json")
+
+    func flag(country: String) -> String {
+        let base: UInt32 = 127397
+        var s = ""
+        for v in country.unicodeScalars {
+            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+        }
+        return String(s)
+    }
 }
 
 public extension Country {
