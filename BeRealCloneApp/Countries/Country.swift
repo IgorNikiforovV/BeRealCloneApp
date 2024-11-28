@@ -26,7 +26,7 @@ public struct Country: Codable {
         }
     }
 
-    static let allCountries: [Country] = Bundle.main.decode(file: "countries.json")
+    static let allCountries: [Country] = Bundle.main.decode(file: "Countries.json")
 
     func flag(country: String) -> String {
         let base: UInt32 = 127397
