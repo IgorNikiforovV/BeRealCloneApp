@@ -19,9 +19,14 @@
 		AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C59482CDC8E1700202312 /* FriendCellView.swift */; };
 		AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */; };
 		AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */; };
+		AC719C922CF845A6000ACCA1 /* SelectCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */; };
 		AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */; };
 		AC843D422CF445D5002564BB /* EnterAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC843D412CF445D5002564BB /* EnterAgeView.swift */; };
 		AC85FE342CD20430002375D7 /* TimeZoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC85FE332CD20430002375D7 /* TimeZoneView.swift */; };
+		AC8CE3002CF64A64008C2DA4 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */; };
+		AC8CE3032CF78F67008C2DA4 /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = AC8CE3022CF78F67008C2DA4 /* Countries.json */; };
+		AC8CE3052CF79020008C2DA4 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CE3042CF79020008C2DA4 /* Country.swift */; };
+		AC8CE3082CF79140008C2DA4 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8CE3072CF79140008C2DA4 /* Bundle+Extension.swift */; };
 		AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8F85342CCF604100C5A650 /* Extensions.swift */; };
 		AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC93D8C42CE5D3A700979348 /* OtherView.swift */; };
 		ACA20D302CE862E6007283DD /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D2F2CE862E6007283DD /* HelpView.swift */; };
@@ -53,9 +58,13 @@
 		AC4C59482CDC8E1700202312 /* FriendCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellView.swift; sourceTree = "<group>"; };
 		AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsButtonView.swift; sourceTree = "<group>"; };
 		AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButtonView.swift; sourceTree = "<group>"; };
+		AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryView.swift; sourceTree = "<group>"; };
 		AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		AC843D412CF445D5002564BB /* EnterAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterAgeView.swift; sourceTree = "<group>"; };
 		AC85FE332CD20430002375D7 /* TimeZoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneView.swift; sourceTree = "<group>"; };
+		AC8CE3022CF78F67008C2DA4 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
+		AC8CE3042CF79020008C2DA4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		AC8CE3072CF79140008C2DA4 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		AC8F85342CCF604100C5A650 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AC93D8C42CE5D3A700979348 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		ACA20D2F2CE862E6007283DD /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
@@ -81,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8CE3002CF64A64008C2DA4 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,16 @@
 			path = SettingsView;
 			sourceTree = "<group>";
 		};
+		AC8CE3062CF79117008C2DA4 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				AC8CE3022CF78F67008C2DA4 /* Countries.json */,
+				AC8CE3042CF79020008C2DA4 /* Country.swift */,
+				AC8CE3072CF79140008C2DA4 /* Bundle+Extension.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
 		AC8F85332CCF602B00C5A650 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +183,7 @@
 		ACEF96F42CB504E800E19B31 /* BeRealCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CE3062CF79117008C2DA4 /* Countries */,
 				AC4C614C2CF19F7400EDC6A2 /* Items */,
 				AC217EF72CD4A8BD00C5B45F /* LeftMenu */,
 				AC8F85332CCF602B00C5A650 /* Extensions */,
@@ -173,11 +194,12 @@
 				ACDACDDD2CBF946900A953C8 /* Profile.swift */,
 				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
+				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
+				AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
-				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
 			);
 			path = BeRealCloneApp;
 			sourceTree = "<group>";
@@ -206,6 +228,9 @@
 			dependencies = (
 			);
 			name = BeRealCloneApp;
+			packageProductDependencies = (
+				AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */,
+			);
 			productName = BeRealCloneApp;
 			productReference = ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +259,9 @@
 				Base,
 			);
 			mainGroup = ACEF96E92CB504E800E19B31;
+			packageReferences = (
+				AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+			);
 			productRefGroup = ACEF96F32CB504E800E19B31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEF96FE2CB504EA00E19B31 /* Preview Assets.xcassets in Resources */,
+				AC8CE3032CF78F67008C2DA4 /* Countries.json in Resources */,
 				ACEF96FA2CB504EA00E19B31 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC4C59492CDC8E1700202312 /* FriendCellView.swift in Sources */,
+				AC719C922CF845A6000ACCA1 /* SelectCountryView.swift in Sources */,
 				AC4C614B2CF1081500EDC6A2 /* NotificationsButtonView.swift in Sources */,
 				AC843D422CF445D5002564BB /* EnterAgeView.swift in Sources */,
 				ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */,
@@ -281,6 +311,7 @@
 				ACA20D322CE86472007283DD /* ChevronButtonView.swift in Sources */,
 				AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */,
 				AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */,
+				AC8CE3082CF79140008C2DA4 /* Bundle+Extension.swift in Sources */,
 				ACA20D382CEB0563007283DD /* MemoriesView.swift in Sources */,
 				AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */,
 				AC093D472CBA4022004D3C8B /* FeedCell.swift in Sources */,
@@ -288,6 +319,7 @@
 				AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */,
 				ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */,
 				AC38E2092CCA1FFF00C743B5 /* EditProfileView.swift in Sources */,
+				AC8CE3052CF79020008C2DA4 /* Country.swift in Sources */,
 				AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +539,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACEF96EA2CB504E800E19B31 /* Project object */;
 }
