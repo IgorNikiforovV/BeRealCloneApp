@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectCountryView: View {
     var counries: [Country] = Country.allCountries
-    @State var countryChosen: Country = Country(isoCode: "")
+    @Binding var countryChosen: Country
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -76,5 +76,5 @@ struct SelectCountryView: View {
 }
 
 #Preview {
-    SelectCountryView()
+    SelectCountryView(countryChosen: .constant(Country(isoCode: "US")))
 }

@@ -35,6 +35,7 @@
 		ACA20D382CEB0563007283DD /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA20D372CEB0563007283DD /* MemoriesView.swift */; };
 		ACA5B1962CF31FF500705A34 /* EnterNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA5B1952CF31FF500705A34 /* EnterNameView.swift */; };
 		ACA603822CC6298A001007C1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA603812CC6298A001007C1 /* SettingsView.swift */; };
+		ACBEE3AB2CFADA5A009D090F /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */; };
 		ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* FeedView.swift */; };
 		ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD356E72CE0888C00EEB956 /* RequestView.swift */; };
 		ACDACDDE2CBF946900A953C8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACDDD2CBF946900A953C8 /* Profile.swift */; };
@@ -73,6 +74,7 @@
 		ACA20D372CEB0563007283DD /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
 		ACA5B1952CF31FF500705A34 /* EnterNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameView.swift; sourceTree = "<group>"; };
 		ACA603812CC6298A001007C1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		ACC99F032CB5B3F6009CE17D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		ACD356E72CE0888C00EEB956 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		ACDACDDD2CBF946900A953C8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -140,7 +142,6 @@
 				AC93D8C42CE5D3A700979348 /* OtherView.swift */,
 				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
 				AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */,
-				ACA5B1952CF31FF500705A34 /* EnterNameView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -161,6 +162,17 @@
 				AC8F85342CCF604100C5A650 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACBEE3A92CFADA23009D090F /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
+				ACA5B1952CF31FF500705A34 /* EnterNameView.swift */,
+				AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */,
+				ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		ACEF96E92CB504E800E19B31 = {
@@ -194,8 +206,7 @@
 				ACDACDDD2CBF946900A953C8 /* Profile.swift */,
 				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
-				AC843D412CF445D5002564BB /* EnterAgeView.swift */,
-				AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */,
+				ACBEE3A92CFADA23009D090F /* Authentication */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
@@ -303,6 +314,7 @@
 				AC20BC002CDB3FE4006C2806 /* SuggestionCellView.swift in Sources */,
 				AC20BBFE2CDB3BEF006C2806 /* Suggestions.swift in Sources */,
 				ACA20D302CE862E6007283DD /* HelpView.swift in Sources */,
+				ACBEE3AB2CFADA5A009D090F /* EnterPhoneNumberView.swift in Sources */,
 				AC217EF92CD4A8E700C5B45F /* LeftMenu.swift in Sources */,
 				ACA20D352CE9FD6A007283DD /* ContactUsView.swift in Sources */,
 				AC4C59472CDC8B6900202312 /* FriendsView.swift in Sources */,
