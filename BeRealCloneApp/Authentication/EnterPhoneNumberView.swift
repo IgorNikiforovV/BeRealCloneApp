@@ -11,6 +11,7 @@ struct EnterPhoneNumberView: View {
     @State var country = Country(isoCode: "US")
     @State var showCountryList = false
     @State var phoneNumber = ""
+    @State var buttonActive = false
 
     var body: some View {
         VStack {
@@ -60,6 +61,7 @@ struct EnterPhoneNumberView: View {
                             .fontWeight(.heavy)
                             .font(.system(size: 40))
                             .frame(width: 220)
+                            .opacity(phoneNumber.isEmpty ? 1 : 0)
                             .overlay {
                                 TextField("", text: $phoneNumber)
                                     .foregroundColor(.white)
@@ -67,12 +69,38 @@ struct EnterPhoneNumberView: View {
                             }
 
                     }
+                    .padding(.leading, UIScreen.main.bounds.width * 0.05)
 
                     Spacer()
                 }
                 .padding(.top, 50)
+
+                VStack {
+                    Spacer()
+
+                    Text("By tapping \"Continue\", you agree to our Privacy Policy and Terms of Secvice.")
+                        .foregroundStyle(Color(red: 70/255, green: 70/255, blue: 73/255))
+                        .fontWeight(.semibold)
+                        .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
+
+                    Button {
+
+                    } label: {
+                        WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
+                            .onChange(of: phoneNumber) { _, newValue in
+                                buttonActive = !newValue.isEmpty
+                            }
+                    }
+                    .disabled(phoneNumber.isEmpty)
+                }
             }
         }
+        .sheet(isPresented: $showCountryList) {
+            SelectCountryView(countryChosen: $country)
+        }
+        .environment(\.colorScheme, .dark)
+
     }
 }
 
