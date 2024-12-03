@@ -44,6 +44,7 @@
 		ACEF96F82CB504E800E19B31 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F72CB504E800E19B31 /* ContentView.swift */; };
 		ACEF96FA2CB504EA00E19B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEF96F92CB504EA00E19B31 /* Assets.xcassets */; };
 		ACEF96FE2CB504EA00E19B31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEF96FD2CB504EA00E19B31 /* Preview Assets.xcassets */; };
+		ACF120382CFD67F70021FBAA /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF120372CFD67F70021FBAA /* EnterCodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		ACEF96F92CB504EA00E19B31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeRealCloneApp.entitlements; sourceTree = "<group>"; };
 		ACEF96FD2CB504EA00E19B31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACF120372CFD67F70021FBAA /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				ACA5B1952CF31FF500705A34 /* EnterNameView.swift */,
 				AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */,
 				ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */,
+				ACF120372CFD67F70021FBAA /* EnterCodeView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				ACA5B1962CF31FF500705A34 /* EnterNameView.swift in Sources */,
 				ACA20D322CE86472007283DD /* ChevronButtonView.swift in Sources */,
 				AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */,
+				ACF120382CFD67F70021FBAA /* EnterCodeView.swift in Sources */,
 				AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */,
 				AC8CE3082CF79140008C2DA4 /* Bundle+Extension.swift in Sources */,
 				ACA20D382CEB0563007283DD /* MemoriesView.swift in Sources */,
