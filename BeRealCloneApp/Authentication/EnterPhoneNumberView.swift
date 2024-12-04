@@ -13,6 +13,8 @@ struct EnterPhoneNumberView: View {
     @State var phoneNumber = ""
     @State var buttonActive = false
 
+    @Binding var phoneNumberButtonClicked: Bool
+
     var body: some View {
         VStack {
             ZStack {
@@ -83,9 +85,8 @@ struct EnterPhoneNumberView: View {
                         .fontWeight(.semibold)
                         .font(.system(size: 14))
                         .multilineTextAlignment(.center)
-
                     Button {
-
+                        phoneNumberButtonClicked = buttonActive
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
                             .onChange(of: phoneNumber) { _, newValue in
@@ -105,5 +106,5 @@ struct EnterPhoneNumberView: View {
 }
 
 #Preview {
-    EnterPhoneNumberView()
+    EnterPhoneNumberView(phoneNumberButtonClicked: .constant(false))
 }
