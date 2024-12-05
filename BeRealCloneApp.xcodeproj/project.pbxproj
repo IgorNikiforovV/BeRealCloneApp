@@ -38,6 +38,7 @@
 		ACBEE3AB2CFADA5A009D090F /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */; };
 		ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* FeedView.swift */; };
 		ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD356E72CE0888C00EEB956 /* RequestView.swift */; };
+		ACD5366B2D022B42007F7F9B /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD5366A2D022B42007F7F9B /* Year.swift */; };
 		ACDACDDE2CBF946900A953C8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACDDD2CBF946900A953C8 /* Profile.swift */; };
 		ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACE232CC0DB3200A953C8 /* MemoryView.swift */; };
 		ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */; };
@@ -80,6 +81,7 @@
 		ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		ACC99F032CB5B3F6009CE17D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		ACD356E72CE0888C00EEB956 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
+		ACD5366A2D022B42007F7F9B /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		ACDACDDD2CBF946900A953C8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ACDACE232CC0DB3200A953C8 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeRealCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +218,7 @@
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
 				ACBEE3A92CFADA23009D090F /* Authentication */,
 				ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */,
+				ACD5366A2D022B42007F7F9B /* Year.swift */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
@@ -345,6 +348,7 @@
 				AC38E2092CCA1FFF00C743B5 /* EditProfileView.swift in Sources */,
 				AC8CE3052CF79020008C2DA4 /* Country.swift in Sources */,
 				AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */,
+				ACD5366B2D022B42007F7F9B /* Year.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

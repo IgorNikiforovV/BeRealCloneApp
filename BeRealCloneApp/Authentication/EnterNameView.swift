@@ -13,6 +13,8 @@ struct EnterNameView: View {
 
     @Binding var nameButtonClicked: Bool
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         VStack {
             ZStack {

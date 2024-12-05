@@ -17,6 +17,8 @@ struct EnterAgeView: View {
     @Binding var ageButtonClicked: Bool
     @State var buttonActive = false
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         VStack {
             ZStack {

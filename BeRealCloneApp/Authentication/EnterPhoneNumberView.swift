@@ -15,6 +15,8 @@ struct EnterPhoneNumberView: View {
 
     @Binding var phoneNumberButtonClicked: Bool
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         VStack {
             ZStack {
