@@ -18,12 +18,15 @@ struct MainAuthenticationView: View {
         NavigationView {
             if !nameButtonClicked {
                 EnterNameView(nameButtonClicked: $nameButtonClicked)
+                    .environmentObject(viewModel)
+
             }
             else if nameButtonClicked && !ageButtonClicked {
                 EnterAgeView(ageButtonClicked: $ageButtonClicked)
             }
             else if nameButtonClicked && ageButtonClicked && !phoneNumberButtonClicked {
                 EnterPhoneNumberView(phoneNumberButtonClicked: $phoneNumberButtonClicked)
+                    .environmentObject(viewModel)
             }
         }
     }

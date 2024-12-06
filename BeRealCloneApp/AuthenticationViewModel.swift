@@ -14,6 +14,12 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var country = Country(isoCode: "")
     @Published var phoneNumber = ""
     @Published var otpText = ""
+
+    @Published var navigationTag: String?
+
+    func sendOtp(){
+        self.navigationTag = "VARIFICATION"
+    }
 }
 
 

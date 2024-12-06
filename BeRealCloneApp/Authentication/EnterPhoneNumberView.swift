@@ -89,6 +89,7 @@ struct EnterPhoneNumberView: View {
                         .multilineTextAlignment(.center)
                     Button {
                         phoneNumberButtonClicked = buttonActive
+                        viewModel.sendOtp()
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
                             .onChange(of: phoneNumber) { _, newValue in
@@ -102,6 +103,14 @@ struct EnterPhoneNumberView: View {
         .sheet(isPresented: $showCountryList) {
             SelectCountryView(countryChosen: $country)
         }
+        .background {
+            NavigationLink(tag: "VARIFICATION", selection: $viewModel.navigationTag) {
+                EnterCodeView()
+                    .environmentObject(viewModel)
+            } label: {
+            }
+            .labelsHidden()
+        }
         .environment(\.colorScheme, .dark)
 
     }
@@ -110,3 +119,8 @@ struct EnterPhoneNumberView: View {
 #Preview {
     EnterPhoneNumberView(phoneNumberButtonClicked: .constant(false))
 }
+
+
+//        .overlay {
+//            ProgressView()
+//        }
