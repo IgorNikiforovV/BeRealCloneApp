@@ -38,6 +38,7 @@
 		ACBEE3AB2CFADA5A009D090F /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */; };
 		ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC99F032CB5B3F6009CE17D /* FeedView.swift */; };
 		ACD356E82CE0888C00EEB956 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD356E72CE0888C00EEB956 /* RequestView.swift */; };
+		ACD5366B2D022B42007F7F9B /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD5366A2D022B42007F7F9B /* Year.swift */; };
 		ACDACDDE2CBF946900A953C8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACDDD2CBF946900A953C8 /* Profile.swift */; };
 		ACDACE242CC0DB3200A953C8 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDACE232CC0DB3200A953C8 /* MemoryView.swift */; };
 		ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */; };
@@ -45,6 +46,8 @@
 		ACEF96FA2CB504EA00E19B31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEF96F92CB504EA00E19B31 /* Assets.xcassets */; };
 		ACEF96FE2CB504EA00E19B31 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEF96FD2CB504EA00E19B31 /* Preview Assets.xcassets */; };
 		ACF120382CFD67F70021FBAA /* EnterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF120372CFD67F70021FBAA /* EnterCodeView.swift */; };
+		ACFAD2D42D001AF30064964B /* MainAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFAD2D32D001AF20064964B /* MainAuthenticationView.swift */; };
+		ACFAD2D62D00235A0064964B /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,7 @@
 		ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		ACC99F032CB5B3F6009CE17D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		ACD356E72CE0888C00EEB956 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
+		ACD5366A2D022B42007F7F9B /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		ACDACDDD2CBF946900A953C8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		ACDACE232CC0DB3200A953C8 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeRealCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,8 @@
 		ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeRealCloneApp.entitlements; sourceTree = "<group>"; };
 		ACEF96FD2CB504EA00E19B31 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACF120372CFD67F70021FBAA /* EnterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeView.swift; sourceTree = "<group>"; };
+		ACFAD2D32D001AF20064964B /* MainAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuthenticationView.swift; sourceTree = "<group>"; };
+		ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +180,7 @@
 				AC719C912CF845A6000ACCA1 /* SelectCountryView.swift */,
 				ACBEE3AA2CFADA5A009D090F /* EnterPhoneNumberView.swift */,
 				ACF120372CFD67F70021FBAA /* EnterCodeView.swift */,
+				ACFAD2D32D001AF20064964B /* MainAuthenticationView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -210,6 +217,8 @@
 				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
 				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
 				ACBEE3A92CFADA23009D090F /* Authentication */,
+				ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */,
+				ACD5366A2D022B42007F7F9B /* Year.swift */,
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
@@ -327,16 +336,19 @@
 				AC7BBA852CEF36A000BE8C83 /* NotificationsView.swift in Sources */,
 				ACF120382CFD67F70021FBAA /* EnterCodeView.swift in Sources */,
 				AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */,
+				ACFAD2D62D00235A0064964B /* AuthenticationViewModel.swift in Sources */,
 				AC8CE3082CF79140008C2DA4 /* Bundle+Extension.swift in Sources */,
 				ACA20D382CEB0563007283DD /* MemoriesView.swift in Sources */,
 				AC8F85352CCF604100C5A650 /* Extensions.swift in Sources */,
 				AC093D472CBA4022004D3C8B /* FeedCell.swift in Sources */,
 				ACC99F042CB5B3F6009CE17D /* FeedView.swift in Sources */,
+				ACFAD2D42D001AF30064964B /* MainAuthenticationView.swift in Sources */,
 				AC4C614E2CF19F9500EDC6A2 /* WhiteButtonView.swift in Sources */,
 				ACEF96F62CB504E800E19B31 /* BeRealCloneAppApp.swift in Sources */,
 				AC38E2092CCA1FFF00C743B5 /* EditProfileView.swift in Sources */,
 				AC8CE3052CF79020008C2DA4 /* Country.swift in Sources */,
 				AC93D8C52CE5D3A700979348 /* OtherView.swift in Sources */,
+				ACD5366B2D022B42007F7F9B /* Year.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

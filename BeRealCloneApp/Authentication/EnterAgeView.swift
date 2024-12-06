@@ -14,8 +14,10 @@ struct EnterAgeView: View {
     @State var month = ""
     @State var year = ""
 
-    @State var ageButtonClicked = false
+    @Binding var ageButtonClicked: Bool
     @State var buttonActive = false
+
+    @EnvironmentObject var viewModel: AuthenticationViewModel
 
     var body: some View {
         VStack {
@@ -56,7 +58,7 @@ struct EnterAgeView: View {
                                     .keyboardType(.numberPad)
                                     .onReceive(Just(day), perform: { newValue in
                                         let filtrered = newValue.filter {
-                                            Set("123456789").contains($0)
+                                            Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
@@ -84,7 +86,7 @@ struct EnterAgeView: View {
                                     .keyboardType(.numberPad)
                                     .onReceive(Just(month), perform: { newValue in
                                         let filtrered = newValue.filter {
-                                            Set("123456789").contains($0)
+                                            Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
@@ -112,7 +114,7 @@ struct EnterAgeView: View {
                                     .keyboardType(.numberPad)
                                     .onReceive(Just(year), perform: { newValue in
                                         let filtrered = newValue.filter {
-                                            Set("123456789").contains($0)
+                                            Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
@@ -140,7 +142,7 @@ struct EnterAgeView: View {
                         .font(.system(size: 14))
 
                     Button {
-
+                        ageButtonClicked = buttonActive
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
                             .onChange(of: month) { oldValue, newValue in
@@ -154,5 +156,5 @@ struct EnterAgeView: View {
 }
 
 #Preview {
-    EnterAgeView()
+    EnterAgeView(ageButtonClicked: .constant(false))
 }

@@ -13,6 +13,10 @@ struct EnterPhoneNumberView: View {
     @State var phoneNumber = ""
     @State var buttonActive = false
 
+    @Binding var phoneNumberButtonClicked: Bool
+
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         VStack {
             ZStack {
@@ -83,9 +87,9 @@ struct EnterPhoneNumberView: View {
                         .fontWeight(.semibold)
                         .font(.system(size: 14))
                         .multilineTextAlignment(.center)
-
                     Button {
-
+                        phoneNumberButtonClicked = buttonActive
+                        viewModel.sendOtp()
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
                             .onChange(of: phoneNumber) { _, newValue in
@@ -99,11 +103,24 @@ struct EnterPhoneNumberView: View {
         .sheet(isPresented: $showCountryList) {
             SelectCountryView(countryChosen: $country)
         }
+        .background {
+            NavigationLink(tag: "VARIFICATION", selection: $viewModel.navigationTag) {
+                EnterCodeView()
+                    .environmentObject(viewModel)
+            } label: {
+            }
+            .labelsHidden()
+        }
         .environment(\.colorScheme, .dark)
 
     }
 }
 
 #Preview {
-    EnterPhoneNumberView()
+    EnterPhoneNumberView(phoneNumberButtonClicked: .constant(false))
 }
+
+
+//        .overlay {
+//            ProgressView()
+//        }
