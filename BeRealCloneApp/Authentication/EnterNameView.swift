@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EnterNameView: View {
-    @State var name = ""
+    @Binding var name: String
     @State var buttonActive = false
 
     @Binding var nameButtonClicked: Bool
@@ -76,5 +76,5 @@ struct EnterNameView: View {
 }
 
 #Preview {
-    EnterNameView(nameButtonClicked: .constant(false))
+    EnterNameView(name: .constant("Test"), nameButtonClicked: .constant(false))
 }

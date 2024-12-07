@@ -10,9 +10,8 @@ import Combine
 
 struct EnterAgeView: View {
 
-    @State var day = ""
-    @State var month = ""
-    @State var year = ""
+    @Binding var year: Year
+    @Binding var name: String
 
     @Binding var ageButtonClicked: Bool
     @State var buttonActive = false
@@ -38,92 +37,92 @@ struct EnterAgeView: View {
                 }
 
                 VStack(alignment: .center, spacing: 8) {
-                    Text("He, when's your birthday?")
+                    Text("Hi \(name), when's your birthday?")
                         .foregroundStyle(.white)
                         .fontWeight(.heavy)
                         .font(.system(size: 16))
 
                     HStack(spacing: 4) {
                         Text("DD")
-                            .opacity(day.isEmpty ? 1 : 0)
+                            .opacity(year.day.isEmpty ? 1 : 0)
                             .foregroundStyle(Color(red: 70/255, green: 70/255, blue: 73/255))
                             .fontWeight(.heavy)
                             .font(.system(size: 45))
                             .frame(width: 65)
                             .overlay {
-                                TextField("", text: $day)
+                                TextField("", text: $year.day)
                                     .foregroundColor(.white)
                                     .font(.system(size: 40, weight: .heavy))
                                     .multilineTextAlignment(.center)
                                     .keyboardType(.numberPad)
-                                    .onReceive(Just(day), perform: { newValue in
+                                    .onReceive(Just(year.day), perform: { newValue in
                                         let filtrered = newValue.filter {
                                             Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
-                                            self.day = filtrered
+                                            self.year.day = filtrered
                                         }
                                     })
-                                    .onReceive(Just(day), perform: { _ in
-                                        if day.count > 2 {
-                                            day = String(day.prefix(2))
+                                    .onReceive(Just(year.day), perform: { _ in
+                                        if year.day.count > 2 {
+                                            year.day = String(year.day.prefix(2))
                                         }
                                     })
                             }
 
                         Text("MM")
-                            .opacity(month.isEmpty ? 1 : 0)
+                            .opacity(year.month.isEmpty ? 1 : 0)
                             .foregroundStyle(Color(red: 70/255, green: 70/255, blue: 73/255))
                             .fontWeight(.heavy)
                             .font(.system(size: 45))
                             .frame(width: 80)
                             .overlay {
-                                TextField("", text: $month)
+                                TextField("", text: $year.month)
                                     .foregroundColor(.white)
                                     .font(.system(size: 40, weight: .heavy))
                                     .multilineTextAlignment(.center)
                                     .keyboardType(.numberPad)
-                                    .onReceive(Just(month), perform: { newValue in
+                                    .onReceive(Just(year.month), perform: { newValue in
                                         let filtrered = newValue.filter {
                                             Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
-                                            self.month = filtrered
+                                            self.year.month = filtrered
                                         }
                                     })
-                                    .onReceive(Just(month), perform: { _ in
-                                        if month.count > 2 {
-                                            month = String(month.prefix(2))
+                                    .onReceive(Just(year.month), perform: { _ in
+                                        if year.month.count > 2 {
+                                            year.month = String(year.month.prefix(2))
                                         }
                                     })
                             }
 
                         Text("YYYY")
-                            .opacity(year.isEmpty ? 1 : 0)
+                            .opacity(year.year.isEmpty ? 1 : 0)
                             .foregroundStyle(Color(red: 70/255, green: 70/255, blue: 73/255))
                             .fontWeight(.heavy)
                             .font(.system(size: 45))
                             .frame(width: 127)
                             .overlay {
-                                TextField("", text: $year)
+                                TextField("", text: $year.year)
                                     .foregroundColor(.white)
                                     .font(.system(size: 40, weight: .heavy))
                                     .multilineTextAlignment(.center)
                                     .keyboardType(.numberPad)
-                                    .onReceive(Just(year), perform: { newValue in
+                                    .onReceive(Just(year.year), perform: { newValue in
                                         let filtrered = newValue.filter {
                                             Set("0123456789").contains($0)
                                         }
 
                                         if filtrered != newValue {
-                                            self.year = filtrered
+                                            self.year.year = filtrered
                                         }
                                     })
-                                    .onReceive(Just(year), perform: { _ in
-                                        if year.count > 4 {
-                                            year = String(year.prefix(4))
+                                    .onReceive(Just(year.year), perform: { _ in
+                                        if year.year.count > 4 {
+                                            year.year = String(year.year.prefix(4))
                                         }
                                     })
                             }
@@ -145,7 +144,7 @@ struct EnterAgeView: View {
                         ageButtonClicked = buttonActive
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
-                            .onChange(of: month) { oldValue, newValue in
+                            .onChange(of: year.month) { oldValue, newValue in
                                 buttonActive = !newValue.isEmpty
                             }
                     }
@@ -156,5 +155,5 @@ struct EnterAgeView: View {
 }
 
 #Preview {
-    EnterAgeView(ageButtonClicked: .constant(false))
+    EnterAgeView(year: .constant(Year(day: "09", month: "10", year: "1985")), name: .constant("Test"), ageButtonClicked: .constant(false))
 }
