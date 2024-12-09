@@ -13,9 +13,13 @@ struct BeRealCloneAppApp: App {
     // register app delegate for Firebase setup
      @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+    init() {
+        UITextView.appearance().backgroundColor = .clear
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainAuthenticationView()
         }
     }
 }

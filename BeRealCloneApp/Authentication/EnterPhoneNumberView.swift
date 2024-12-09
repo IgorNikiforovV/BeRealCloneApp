@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct EnterPhoneNumberView: View {
-    @State var country = Country(isoCode: "US")
-    @State var showCountryList = false
-    @State var phoneNumber = ""
-    @State var buttonActive = false
 
+    @State var showCountryList = false
+    @State var buttonActive = false 
     @Binding var phoneNumberButtonClicked: Bool
 
     @EnvironmentObject var viewModel: AuthenticationViewModel
@@ -49,9 +47,9 @@ struct EnterPhoneNumberView: View {
                             .frame(width: 75,height: 45)
                             .foregroundColor(.gray)
                             .overlay {
-                                Text("\(country.flag(country: country.isoCode))")
+                                Text("\(viewModel.country.flag(country: viewModel.country.isoCode))")
                                 +
-                                Text("+\(country.phoneCode)")
+                                Text("+\(viewModel.country.phoneCode)")
                                     .foregroundStyle(.white)
                                     .font(.system(size: 12))
                                     .fontWeight(.bold)
@@ -65,9 +63,9 @@ struct EnterPhoneNumberView: View {
                             .fontWeight(.heavy)
                             .font(.system(size: 40))
                             .frame(width: 220)
-                            .opacity(phoneNumber.isEmpty ? 1 : 0)
+                            .opacity(viewModel.phoneNumber.isEmpty ? 1 : 0)
                             .overlay {
-                                TextField("", text: $phoneNumber)
+                                TextField("", text: $viewModel.phoneNumber)
                                     .foregroundColor(.white)
                                     .font(.system(size: 40, weight: .heavy))
                             }
@@ -89,19 +87,25 @@ struct EnterPhoneNumberView: View {
                         .multilineTextAlignment(.center)
                     Button {
                         phoneNumberButtonClicked = buttonActive
-                        viewModel.sendOtp()
+                        Task {
+                           await viewModel.sendOtp()
+                        }
                     } label: {
                         WhiteButtonView(buttonActive: $buttonActive, title: "Continue")
-                            .onChange(of: phoneNumber) { _, newValue in
+                            .onChange(of: viewModel.phoneNumber) { _, newValue in
                                 buttonActive = !newValue.isEmpty
                             }
                     }
-                    .disabled(phoneNumber.isEmpty)
+                    .disabled(viewModel.phoneNumber.isEmpty)
                 }
             }
         }
         .sheet(isPresented: $showCountryList) {
-            SelectCountryView(countryChosen: $country)
+            SelectCountryView(countryChosen: $viewModel.country)
+        }
+        .overlay {
+            ProgressView()
+                .opacity(viewModel.isLoading ? 1 : 0)
         }
         .background {
             NavigationLink(tag: "VARIFICATION", selection: $viewModel.navigationTag) {
@@ -119,8 +123,3 @@ struct EnterPhoneNumberView: View {
 #Preview {
     EnterPhoneNumberView(phoneNumberButtonClicked: .constant(false))
 }
-
-
-//        .overlay {
-//            ProgressView()
-//        }
