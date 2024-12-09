@@ -6,12 +6,30 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct BeRealCloneAppApp: App {
+    // register app delegate for Firebase setup
+     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    init() {
+        UITextView.appearance().backgroundColor = .clear
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainAuthenticationView()
         }
     }
+}
+
+// Firebase initialization
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+
+    return true
+  }
 }

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		AC07E5BC2CBCEB5A005A1593 /* ThreeDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */; };
 		AC093D472CBA4022004D3C8B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC093D462CBA4022004D3C8B /* FeedCell.swift */; };
+		AC18AA012D0578960054A540 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AC18AA002D0578960054A540 /* FirebaseAuth */; };
+		AC18AA032D0578960054A540 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AC18AA022D0578960054A540 /* FirebaseFirestore */; };
+		AC18AA052D0578960054A540 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AC18AA042D0578960054A540 /* FirebaseFirestoreCombine-Community */; };
+		AC18AA072D0578960054A540 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AC18AA062D0578960054A540 /* FirebaseStorage */; };
+		AC18AA092D0578960054A540 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = AC18AA082D0578960054A540 /* FirebaseStorageCombine-Community */; };
+		AC18AA0B2D057AC90054A540 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC18AA0A2D057AC90054A540 /* GoogleService-Info.plist */; };
 		AC20BBFE2CDB3BEF006C2806 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */; };
 		AC20BC002CDB3FE4006C2806 /* SuggestionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */; };
 		AC217EF92CD4A8E700C5B45F /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */; };
@@ -53,6 +59,8 @@
 /* Begin PBXFileReference section */
 		AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDots.swift; sourceTree = "<group>"; };
 		AC093D462CBA4022004D3C8B /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		AC18AA0A2D057AC90054A540 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC18AA0E2D06C8850054A540 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC20BBFD2CDB3BEF006C2806 /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		AC20BBFF2CDB3FE4006C2806 /* SuggestionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCellView.swift; sourceTree = "<group>"; };
 		AC217EF82CD4A8E700C5B45F /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
@@ -101,6 +109,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8CE3002CF64A64008C2DA4 /* CountryPicker in Frameworks */,
+				AC18AA052D0578960054A540 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				AC18AA012D0578960054A540 /* FirebaseAuth in Frameworks */,
+				AC18AA072D0578960054A540 /* FirebaseStorage in Frameworks */,
+				AC18AA092D0578960054A540 /* FirebaseStorageCombine-Community in Frameworks */,
+				AC18AA032D0578960054A540 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +154,7 @@
 		AC7BBA862CEF3B3000BE8C83 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */,
 				ACA603812CC6298A001007C1 /* SettingsView.swift */,
 				ACA20D2F2CE862E6007283DD /* HelpView.swift */,
 				ACA20D372CEB0563007283DD /* MemoriesView.swift */,
@@ -188,7 +202,6 @@
 		ACEF96E92CB504E800E19B31 = {
 			isa = PBXGroup;
 			children = (
-				AC4C614A2CF1081500EDC6A2 /* NotificationsButtonView.swift */,
 				ACEF96F42CB504E800E19B31 /* BeRealCloneApp */,
 				ACEF96F32CB504E800E19B31 /* Products */,
 			);
@@ -205,6 +218,8 @@
 		ACEF96F42CB504E800E19B31 /* BeRealCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC18AA0E2D06C8850054A540 /* Info.plist */,
+				AC18AA0A2D057AC90054A540 /* GoogleService-Info.plist */,
 				AC8CE3062CF79117008C2DA4 /* Countries */,
 				AC4C614C2CF19F7400EDC6A2 /* Items */,
 				AC217EF72CD4A8BD00C5B45F /* LeftMenu */,
@@ -253,6 +268,11 @@
 			name = BeRealCloneApp;
 			packageProductDependencies = (
 				AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */,
+				AC18AA002D0578960054A540 /* FirebaseAuth */,
+				AC18AA022D0578960054A540 /* FirebaseFirestore */,
+				AC18AA042D0578960054A540 /* FirebaseFirestoreCombine-Community */,
+				AC18AA062D0578960054A540 /* FirebaseStorage */,
+				AC18AA082D0578960054A540 /* FirebaseStorageCombine-Community */,
 			);
 			productName = BeRealCloneApp;
 			productReference = ACEF96F22CB504E800E19B31 /* BeRealCloneApp.app */;
@@ -284,6 +304,7 @@
 			mainGroup = ACEF96E92CB504E800E19B31;
 			packageReferences = (
 				AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = ACEF96F32CB504E800E19B31 /* Products */;
 			projectDirPath = "";
@@ -300,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEF96FE2CB504EA00E19B31 /* Preview Assets.xcassets in Resources */,
+				AC18AA0B2D057AC90054A540 /* GoogleService-Info.plist in Resources */,
 				AC8CE3032CF78F67008C2DA4 /* Countries.json in Resources */,
 				ACEF96FA2CB504EA00E19B31 /* Assets.xcassets in Resources */,
 			);
@@ -482,6 +504,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeRealCloneApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -520,6 +543,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BeRealCloneApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -569,6 +593,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
 		AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mobven/CountryPicker.git";
@@ -580,6 +612,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC18AA002D0578960054A540 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		AC18AA022D0578960054A540 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		AC18AA042D0578960054A540 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		AC18AA062D0578960054A540 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		AC18AA082D0578960054A540 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC18A9FF2D0578960054A540 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
 		AC8CE2FF2CF64A64008C2DA4 /* CountryPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC8CE2FE2CF64A64008C2DA4 /* XCRemoteSwiftPackageReference "CountryPicker" */;
