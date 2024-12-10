@@ -30,11 +30,12 @@ final class AuthenticationViewModel: ObservableObject {
         do {
             let result = try await PhoneAuthProvider.provider().verifyPhoneNumber("+\(country.phoneCode)\(phoneNumber))", uiDelegate: nil)
             DispatchQueue.main.async {
-                self.isLoading = true
+                self.isLoading = false
                 self.verificationCode = result
                 self.navigationTag = "VARIFICATION"
             }
         } catch {
+            print("ERROR: \(error.localizedDescription)")
             handleError(error.localizedDescription)
         }
     }
@@ -44,6 +45,24 @@ final class AuthenticationViewModel: ObservableObject {
             self.isLoading = true
             self.errorMessage = error
             self.showAlert.toggle()
+        }
+    }
+
+    func verifyOtp() async {
+        do {
+            isLoading = true
+            let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationCode, verificationCode: otpText)
+
+            let result = try await Auth.auth().signIn(with: credential)
+
+            DispatchQueue.main.async {
+                self.isLoading = false
+                let user = result.user
+                print("🚩 user.uid: \(user.uid)")
+            }
+        } catch {
+            print("ERROR: \(error.localizedDescription)")
+            handleError(error.localizedDescription)
         }
     }
 }
