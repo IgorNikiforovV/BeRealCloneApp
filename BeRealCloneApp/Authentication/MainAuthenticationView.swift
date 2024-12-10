@@ -26,6 +26,7 @@ struct MainAuthenticationView: View {
                     year: $viewModel.year,
                     name: $viewModel.name,
                     ageButtonClicked: $ageButtonClicked)
+                .environmentObject(viewModel)
             }
             else if nameButtonClicked && ageButtonClicked && !phoneNumberButtonClicked {
                 EnterPhoneNumberView( phoneNumberButtonClicked: $phoneNumberButtonClicked)
