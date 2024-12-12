@@ -19,7 +19,7 @@ struct BeRealCloneAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            MainAuthenticationView()
+            MainView().environmentObject(AuthenticationViewModel.shared)
         }
     }
 }

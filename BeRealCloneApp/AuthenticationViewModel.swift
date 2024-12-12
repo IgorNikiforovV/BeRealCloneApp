@@ -8,6 +8,9 @@
 import SwiftUI
 import Combine
 import FirebaseAuth
+import FirebaseCore
+import FirebaseStorage
+import FirebaseFirestore
 
 final class AuthenticationViewModel: ObservableObject {
     @Published var name = ""
@@ -23,6 +26,15 @@ final class AuthenticationViewModel: ObservableObject {
 
     @Published var errorMessage = ""
     @Published var showAlert = false
+
+    @Published var userSession: FirebaseAuth.User? {
+        didSet {
+            print("userSession заполнен \(userSession != nil)")
+        }
+    }
+    @Published var currentUser: User?
+
+    static let shared = AuthenticationViewModel()
 
     func sendOtp() async {
         if isLoading { return }
@@ -55,9 +67,21 @@ final class AuthenticationViewModel: ObservableObject {
 
             let result = try await Auth.auth().signIn(with: credential)
 
+            let db = Firestore.firestore()
+            db.collection("users").document(result.user.uid).setData([
+                "fullname": name,
+                "date": year.date,
+                "id": result.user.uid
+            ]) { err in
+                if let err {
+                    print(err.localizedDescription)
+                }
+            }
+
             DispatchQueue.main.async {
                 self.isLoading = false
                 let user = result.user
+                self.userSession = user
                 print("🚩 user.uid: \(user.uid)")
             }
         } catch {
