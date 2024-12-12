@@ -15,7 +15,7 @@ struct MainView: View {
             if viewModel.userSession == nil {
                 MainAuthenticationView()
             } else {
-                Text("Home")
+                ContentView()
             }
         }
     }

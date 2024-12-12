@@ -27,8 +27,14 @@ final class AuthenticationViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var showAlert = false
 
-    @Published var userSession: FirebaseAuth.User?
+    @Published var userSession: FirebaseAuth.User? {
+        didSet {
+            print("userSession заполнен \(userSession != nil)")
+        }
+    }
     @Published var currentUser: User?
+
+    static let shared = AuthenticationViewModel()
 
     func sendOtp() async {
         if isLoading { return }
@@ -70,7 +76,6 @@ final class AuthenticationViewModel: ObservableObject {
                 if let err {
                     print(err.localizedDescription)
                 }
-
             }
 
             DispatchQueue.main.async {

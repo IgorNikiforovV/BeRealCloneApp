@@ -30,7 +30,7 @@ struct ContentView: View {
             HStack(spacing: 0) {
                 LeftMenu(mainMenu: $menu)
                     .frame(width: width)
-                EnterCodeView()
+                FeedView(mainMenu: $menu)
                     .frame(width: width)
                 Profile(mainMenu: $menu)
                     .frame(width: width)
