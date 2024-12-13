@@ -36,6 +36,11 @@ final class AuthenticationViewModel: ObservableObject {
 
     static let shared = AuthenticationViewModel()
 
+    init() {
+        userSession = Auth.auth().currentUser
+        fetchUser()
+    }
+
     func sendOtp() async {
         if isLoading { return }
 
@@ -87,6 +92,25 @@ final class AuthenticationViewModel: ObservableObject {
         } catch {
             print("ERROR: \(error.localizedDescription)")
             handleError(error.localizedDescription)
+        }
+    }
+
+    func signOut() {
+        self.userSession = nil
+        try? Auth.auth().signOut()
+    }
+
+    func fetchUser() {
+        guard  let uid = userSession?.uid else {  return }
+
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, err in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            self.currentUser
         }
     }
 }
