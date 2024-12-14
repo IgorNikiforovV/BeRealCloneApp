@@ -16,6 +16,8 @@ struct ContentView: View {
     @State var width = UIScreen.main.bounds.width
     @State var menu: MainMenu = .feed
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     func simpleSuccess() {
         let generator  = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.success)
