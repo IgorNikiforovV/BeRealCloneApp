@@ -10,6 +10,8 @@ import SwiftUI
 struct FeedView: View {
     @Binding var mainMenu: MainMenu
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
+
     var body: some View {
         ZStack {
             Color.black
@@ -88,10 +90,20 @@ struct FeedView: View {
                                         mainMenu = .profile
                                     }
                                 } label: {
-                                    Image("photo")
-                                        .resizable()
+                                    Circle()
                                         .frame(width: 35, height: 35)
                                         .cornerRadius(17.5)
+                                        .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                                        .overlay {
+                                            Text(viewModel.name.prefix(1).uppercased())
+                                                .foregroundStyle(.white)
+                                                .font(.system(size: 15))
+                                        }
+
+//                                    Image("photo")
+//                                        .resizable()
+//                                        .frame(width: 35, height: 35)
+//                                        .cornerRadius(17.5)
                                 }
 
                             }

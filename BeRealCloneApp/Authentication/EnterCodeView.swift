@@ -37,7 +37,7 @@ struct EnterCodeView: View {
                 VStack {
                     VStack {
                         VStack(alignment: .center, spacing: 8){
-                            Text("Enter the code we sent to +7 958 882 47")
+                            Text("Enter the code we sent to \(viewModel.country.phoneCode) \(viewModel.phoneNumber)")
                                 .foregroundStyle(.white)
                                 .fontWeight(.medium)
                                 .font(.system(size: 16))

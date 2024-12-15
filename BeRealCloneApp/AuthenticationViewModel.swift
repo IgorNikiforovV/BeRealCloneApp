@@ -83,10 +83,11 @@ final class AuthenticationViewModel: ObservableObject {
                 }
             }
 
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 self.isLoading = false
                 let user = result.user
                 self.userSession = user
+                self.currentUser = User(fullname: name, date: year.date)
                 print("🚩 user.uid: \(user.uid)")
             }
         } catch {
@@ -109,8 +110,13 @@ final class AuthenticationViewModel: ObservableObject {
                 return
             }
 
-            guard let user = try? snapshot?.data(as: User.self) else { return }
-            self.currentUser
+            do {
+                let user = try snapshot?.data(as: User.self)
+                self.currentUser = user
+                print("✅ user: \(String(describing: user))")
+            } catch {
+                print("snapshot error: \(error.localizedDescription)")
+            }
         }
     }
 }
