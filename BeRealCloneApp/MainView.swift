@@ -18,7 +18,7 @@ struct MainView: View {
                 if let user = viewModel.currentUser {
                     ContentView()
                 } else {
-                    Text("Error")
+                    ProgressView()
                 }
             }
         }
