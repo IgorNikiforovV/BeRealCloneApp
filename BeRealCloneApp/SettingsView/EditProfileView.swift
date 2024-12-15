@@ -10,6 +10,7 @@ import SwiftUI
 struct EditProfileView: View {
     @State var width = UIScreen.main.bounds.width
 
+    @EnvironmentObject var viewModel: AuthenticationViewModel
     @Environment(\.dismiss) var dissmiss
 
     @State var fullname = ""
@@ -56,11 +57,21 @@ struct EditProfileView: View {
                 
                 VStack {
                     ZStack(alignment: .bottomTrailing) {
-                        Image("photo")
-                            .resizable()
-                            .aspectRatio(1, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                        Image("photo")
+//                            .resizable()
+//                            .aspectRatio(1, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+//                            .frame(width: 120, height: 120)
+//                            .cornerRadius(60)
+                        Circle()
                             .frame(width: 120, height: 120)
                             .cornerRadius(60)
+                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                            .overlay {
+                                Text((viewModel.currentUser?.fullname ?? "").prefix(1))
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 55))
+                            }
+
                         ZStack {
                             ZStack {
                                 Circle()
