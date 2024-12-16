@@ -13,10 +13,20 @@ struct EditProfileView: View {
     @EnvironmentObject var viewModel: AuthenticationViewModel
     @Environment(\.dismiss) var dissmiss
 
-    @State var fullname = ""
-    @State var username = ""
-    @State var bio = ""
-    @State var location = ""
+    @State var fullname: String
+    @State var username: String
+    @State var bio: String
+    @State var location: String
+
+    let currentUser: User
+
+    init(currentUser: User) {
+        self.currentUser = currentUser
+        self._fullname = State(initialValue: currentUser.fullname)
+        self._bio = State(initialValue: currentUser.bio ?? "")
+        self._username = State(initialValue: currentUser.username ?? "")
+        self._location = State(initialValue: currentUser.location ?? "")
+    }
 
     var body: some View {
         VStack {
@@ -34,8 +44,14 @@ struct EditProfileView: View {
 
                             Spacer()
 
-                            Text("Save")
-                                .foregroundStyle(.gray)
+                            Button {
+                                saveData()
+                                dissmiss()
+                            } label: {
+                                Text("Save")
+                                    .foregroundStyle(.gray)
+                            }
+
                         }
                         .padding(.horizontal, width * 0.05)
                         Text("Edit Profile")
@@ -100,7 +116,7 @@ struct EditProfileView: View {
 
                         HStack {
                             HStack {
-                                Text("Full name")
+                                Text(viewModel.currentUser?.fullname ?? "")
                                     .foregroundStyle(.white)
                                     .font(.system(size: 16))
                                 Spacer()
@@ -230,8 +246,22 @@ struct EditProfileView: View {
             }
         }
     }
+
+    func saveData() {
+        if viewModel.currentUser?.fullname != self.fullname && !self.fullname.isEmpty {
+            viewModel.currentUser?.fullname = self.fullname
+        }
+    }
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(currentUser: User(
+        id: "123456",
+        username: "Igor",
+        profileImageUrl: nil,
+        fullname: "Igor Niki",
+        date: "09.10.1985",
+        bio: "XXX",
+        location: "Moscow"
+    ) )
 }
