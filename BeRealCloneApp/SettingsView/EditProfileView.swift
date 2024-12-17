@@ -45,13 +45,14 @@ struct EditProfileView: View {
                             Spacer()
 
                             Button {
-                                saveData()
+                                Task {
+                                    await saveData()
+                                }
                                 dissmiss()
                             } label: {
                                 Text("Save")
                                     .foregroundStyle(.gray)
                             }
-
                         }
                         .padding(.horizontal, width * 0.05)
                         Text("Edit Profile")
@@ -155,7 +156,7 @@ struct EditProfileView: View {
                                 TextField("", text: $username)
                                     .font(.system(size: 16))
                                     .paceholder(when: username.isEmpty) {
-                                        Text("Niki").foregroundStyle(.white)
+                                        Text("Niki").foregroundStyle(.gray)
                                             .font(.system(size: 16))
                                     }
                                     .foregroundColor(.white)
@@ -247,9 +248,23 @@ struct EditProfileView: View {
         }
     }
 
-    func saveData() {
-        if viewModel.currentUser?.fullname != self.fullname && !self.fullname.isEmpty {
+    func saveData() async {
+        guard let user = viewModel.currentUser else { return }
+        if user.fullname != self.fullname && !self.fullname.isEmpty {
             viewModel.currentUser?.fullname = self.fullname
+            await viewModel.saveUserData(data: ["fullname": self.fullname])
+        }
+        if user.username != self.username && !self.username.isEmpty {
+            viewModel.currentUser?.username = self.username
+            await viewModel.saveUserData(data: ["username": self.username])
+        }
+        if user.bio != self.bio && !self.bio.isEmpty {
+            viewModel.currentUser?.bio = self.bio
+            await viewModel.saveUserData(data: ["bio": self.bio])
+        }
+        if user.location != self.location && !self.location.isEmpty {
+            viewModel.currentUser?.location = self.location
+            await viewModel.saveUserData(data: ["location": self.location])
         }
     }
 }
