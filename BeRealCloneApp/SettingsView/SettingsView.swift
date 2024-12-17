@@ -70,11 +70,11 @@ struct SettingsView: View {
                                         }
 
                                         VStack(alignment: .leading) {
-                                            Text("Igor")
+                                            Text(viewModel.currentUser?.fullname ?? "")
                                                 .foregroundStyle(.white)
                                                 .fontWeight(.semibold)
                                                 .font(.system(size: 18))
-                                            Text("niki")
+                                            Text(viewModel.currentUser?.username ?? viewModel.currentUser?.fullname.lowercased() ?? "")
                                                 .foregroundStyle(.white)
                                                 .fontWeight(.semibold)
                                                 .font(.system(size: 14))
