@@ -79,7 +79,7 @@ struct EditProfileView: View {
                 
                 VStack {
                     Button {
-                        //self.imagePickerPresented.toggle()
+                        self.imagePickerPresented.toggle()
                     } label: {
                         ZStack(alignment: .bottomTrailing) {
     //                        Image("photo")
@@ -88,10 +88,10 @@ struct EditProfileView: View {
     //                            .frame(width: 120, height: 120)
     //                            .cornerRadius(60)
                             if let image = profileImage {
-//                                image
-//                                    .resizable()
-//                                    .frame(width: 120, height: 120)
-//                                    .cornerRadius(60)
+                                image
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .cornerRadius(60)
                             } else {
                                 Circle()
                                     .frame(width: 120, height: 120)
@@ -118,15 +118,16 @@ struct EditProfileView: View {
                                         .opacity(0.1)
                                 }
                                 Image(systemName: "camera.fill")
+                                    .foregroundColor(.black)
                                     .font(.system(size: 16))
                                     .shadow(color: .white, radius: 1, x: 1, y: 1)
                             }
                         }
-                        sheet(isPresented: $imagePickerPresented) {
-                            loadImage()
-                        } content: {
-                            ImagePicker(image: $selectedIamge)
-                        }
+                    }
+                    .sheet(isPresented: $imagePickerPresented) {
+                        loadImage()
+                    } content: {
+                        ImagePicker(image: $selectedIamge)
                     }
 
                     // MENU
