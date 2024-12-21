@@ -18,6 +18,11 @@ struct EditProfileView: View {
     @State var bio: String
     @State var location: String
 
+    @State var imagePickerPresented = false
+
+    @State private var selectedIamge: UIImage?
+    @State var profileImage: Image?
+
     let currentUser: User
 
     init(currentUser: User) {
@@ -73,39 +78,56 @@ struct EditProfileView: View {
                 }
                 
                 VStack {
-                    ZStack(alignment: .bottomTrailing) {
-//                        Image("photo")
-//                            .resizable()
-//                            .aspectRatio(1, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-//                            .frame(width: 120, height: 120)
-//                            .cornerRadius(60)
-                        Circle()
-                            .frame(width: 120, height: 120)
-                            .cornerRadius(60)
-                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
-                            .overlay {
-                                Text((viewModel.currentUser?.fullname ?? "").prefix(1))
-                                    .foregroundStyle(.white)
-                                    .font(.system(size: 55))
+                    Button {
+                        self.imagePickerPresented.toggle()
+                    } label: {
+                        ZStack(alignment: .bottomTrailing) {
+    //                        Image("photo")
+    //                            .resizable()
+    //                            .aspectRatio(1, contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+    //                            .frame(width: 120, height: 120)
+    //                            .cornerRadius(60)
+                            if let image = profileImage {
+                                image
+                                    .resizable()
+                                    .frame(width: 120, height: 120)
+                                    .cornerRadius(60)
+                            } else {
+                                Circle()
+                                    .frame(width: 120, height: 120)
+                                    .cornerRadius(60)
+                                    .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                                    .overlay {
+                                        Text((viewModel.currentUser?.fullname ?? "").prefix(1))
+                                            .foregroundStyle(.white)
+                                            .font(.system(size: 55))
+                                    }
                             }
 
-                        ZStack {
                             ZStack {
-                                Circle()
-                                    .frame(width: 34, height: 34)
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 34, height: 34)
+                                        .foregroundColor(.black)
+                                    Circle()
+                                        .frame(width: 30 , height: 30)
+                                        .foregroundColor(.white)
+                                    Circle()
+                                        .frame(width: 30 , height: 30)
+                                        .foregroundColor(.black)
+                                        .opacity(0.1)
+                                }
+                                Image(systemName: "camera.fill")
                                     .foregroundColor(.black)
-                                Circle()
-                                    .frame(width: 30 , height: 30)
-                                    .foregroundColor(.white)
-                                Circle()
-                                    .frame(width: 30 , height: 30)
-                                    .foregroundColor(.black)
-                                    .opacity(0.1)
+                                    .font(.system(size: 16))
+                                    .shadow(color: .white, radius: 1, x: 1, y: 1)
                             }
-                            Image(systemName: "camera.fill")
-                                .font(.system(size: 16))
-                                .shadow(color: .white, radius: 1, x: 1, y: 1)
                         }
+                    }
+                    .sheet(isPresented: $imagePickerPresented) {
+                        loadImage()
+                    } content: {
+                        ImagePicker(image: $selectedIamge)
                     }
 
                     // MENU
@@ -266,6 +288,11 @@ struct EditProfileView: View {
             viewModel.currentUser?.location = self.location
             await viewModel.saveUserData(data: ["location": self.location])
         }
+    }
+
+    func loadImage() {
+        guard let selectedIamge else { return }
+        profileImage = Image(uiImage: selectedIamge)
     }
 }
 
