@@ -128,7 +128,15 @@ final class AuthenticationViewModel: ObservableObject {
         } catch {
             handleError(error.localizedDescription)
         }
+    }
 
+    func uploadProfileImage(
+        image: UIImage,
+        completion: @escaping (String) -> Void
+    ) {
+        ImageUploader.uploadImage(image: image, type: .profile) { url in
+            completion(url)
+        }
     }
 }
 
