@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct EditProfileView: View {
     @State var width = UIScreen.main.bounds.width
@@ -92,6 +93,23 @@ struct EditProfileView: View {
                                     .resizable()
                                     .frame(width: 120, height: 120)
                                     .cornerRadius(60)
+                            } else if let image = viewModel.currentUser?.profileImageUrl,
+                               profileImage == nil {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 120, height: 120)
+                                        .cornerRadius(60)
+                                        .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                                        .overlay {
+                                            Text((viewModel.currentUser?.fullname ?? "").prefix(1))
+                                                .foregroundStyle(.white)
+                                                .font(.system(size: 55))
+                                        }
+                                    KFImage(URL(string: image))
+                                        .resizable()
+                                        .frame(width: 120, height: 120)
+                                        .cornerRadius(60)
+                                }
                             } else {
                                 Circle()
                                     .frame(width: 120, height: 120)
@@ -296,6 +314,7 @@ struct EditProfileView: View {
                         viewModel.currentUser?.profileImageUrl = url
                         await viewModel.saveUserData(data: ["profileImageUrl": url])
                     }
+
                 } catch {
                     print(error.localizedDescription)
                 }
