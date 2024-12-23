@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedView: View {
     @Binding var mainMenu: MainMenu
@@ -90,15 +91,22 @@ struct FeedView: View {
                                         mainMenu = .profile
                                     }
                                 } label: {
-                                    Circle()
-                                        .frame(width: 35, height: 35)
-                                        .cornerRadius(17.5)
-                                        .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
-                                        .overlay {
-                                            Text((viewModel.currentUser?.fullname ?? "").prefix(1).uppercased())
-                                                .foregroundStyle(.white)
-                                                .font(.system(size: 15))
-                                        }
+                                    if let profileImage = viewModel.currentUser?.profileImageUrl {
+                                        KFImage(URL(string: profileImage))
+                                            .resizable()
+                                            .frame(width: 35, height: 35)
+                                            .cornerRadius(17.5)
+                                    } else {
+                                        Circle()
+                                            .frame(width: 35, height: 35)
+                                            .cornerRadius(17.5)
+                                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                                            .overlay {
+                                                Text((viewModel.currentUser?.fullname ?? "").prefix(1).uppercased())
+                                                    .foregroundStyle(.white)
+                                                    .font(.system(size: 15))
+                                            }
+                                    }
 
 //                                    Image("photo")
 //                                        .resizable()
@@ -119,6 +127,9 @@ struct FeedView: View {
                         Spacer()
                     }
                 }
+        }
+        .onAppear {
+            KingfisherManager.shared.cache.clearMemoryCache()
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct Profile: View {
     @Binding var mainMenu: MainMenu
@@ -52,15 +53,22 @@ struct Profile: View {
 //                        //.scaledToFit()
 //                        .frame(width: 130, height: 130)
 //                        .cornerRadius(75)
-                    Circle()
-                        .frame(width: 130, height: 130)
-                        .cornerRadius(75)
-                        .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
-                        .overlay {
-                            Text((viewModel.currentUser?.fullname ?? "").prefix(1))
-                                .foregroundStyle(.white)
-                                .font(.system(size: 55))
-                        }
+                    if let profileImage = viewModel.currentUser?.profileImageUrl {
+                        KFImage(URL(string: profileImage))
+                            .resizable()
+                            .frame(width: 130, height: 130)
+                            .cornerRadius(75)
+                    } else {
+                        Circle()
+                            .frame(width: 130, height: 130)
+                            .cornerRadius(75)
+                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                            .overlay {
+                                Text((viewModel.currentUser?.fullname ?? "").prefix(1))
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 55))
+                            }
+                    }
 
                     Text(viewModel.currentUser?.fullname ?? "")
                         .foregroundStyle(.white)

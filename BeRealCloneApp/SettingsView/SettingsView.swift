@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
@@ -59,14 +60,21 @@ struct SettingsView: View {
 //                                            .scaledToFill()
 //                                            .frame(width: 60, height: 60)
 //                                            .cornerRadius(30)
-                                        Circle()
-                                        .frame(width: 60, height: 60)
-                                        .cornerRadius(30)
-                                        .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
-                                        .overlay {
-                                            Text((viewModel.currentUser?.fullname ?? "").prefix(1).uppercased())
-                                                .foregroundStyle(.white)
-                                                .font(.system(size: 25))
+                                        if let profileImage = viewModel.currentUser?.profileImageUrl {
+                                            KFImage(URL(string: profileImage))
+                                                .resizable()
+                                                .frame(width: 60, height: 60)
+                                                .cornerRadius(30)
+                                        } else {
+                                            Circle()
+                                            .frame(width: 60, height: 60)
+                                            .cornerRadius(30)
+                                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                                            .overlay {
+                                                Text((viewModel.currentUser?.fullname ?? "").prefix(1).uppercased())
+                                                    .foregroundStyle(.white)
+                                                    .font(.system(size: 25))
+                                            }
                                         }
 
                                         VStack(alignment: .leading) {
