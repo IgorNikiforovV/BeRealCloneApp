@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CameraView: View {
     @State var switchingCamera = false
+    @State var takePhotoClicked = false
+    @State var selectedBackImage: UIImage?
+    @State var backIamge: Image?
 
     var body: some View {
         VStack {
@@ -47,13 +50,18 @@ struct CameraView: View {
                             .foregroundColor(.white)
                             .opacity(self.switchingCamera ? 1 : 0)
                         }
+                        .sheet(isPresented: $takePhotoClicked) {
+                            loadBackImage()
+                        } content: {
+                            ImagePicker(image: $selectedBackImage)
+                        }
 
                     VStack {
                         HStack(alignment: .center, spacing: 18) {
                             Image(systemName: "bolt.slash.fill")
                                 .font(.system(size: 28))
                             Button {
-
+                                self.takePhotoClicked.toggle()
                             } label: {
                                 Image(systemName: "circle")
                                     .font(.system(size: 70))
@@ -69,6 +77,11 @@ struct CameraView: View {
                 .padding(.top, 50)
             }
         }
+    }
+
+    func loadBackImage() {
+        guard let selectedBackImage else { return }
+        backIamge = Image(uiImage: selectedBackImage)
     }
 }
 
