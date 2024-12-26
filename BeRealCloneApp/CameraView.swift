@@ -36,25 +36,44 @@ struct CameraView: View {
                         .font(.system(size: 20))
                         .fontWeight(.heavy)
 
-                    RoundedRectangle(cornerRadius: 12)
-                        .foregroundColor(.gray)
-                        .frame(
-                            width: UIScreen.main.bounds.width,
-                            height: UIScreen.main.bounds.height * 0.6
-                        )
-                        .overlay {
-                            VStack {
-                                ProgressView()
-                                Text("Wait, wait, wait, now smile")
+                    if let image = backIamge {
+                        image
+                            .resizable()
+                            .cornerRadius(12)
+                            .frame(
+                                width: UIScreen.main.bounds.width,
+                                height: UIScreen.main.bounds.height * 0.6
+                            )
+                            .scaledToFit()
+                            .overlay {
+                                VStack {
+                                    ProgressView()
+                                    Text("Wait, wait, wait, now smile")
+                                }
+                                .foregroundColor(.white)
+                                .opacity(self.switchingCamera ? 1 : 0)
                             }
-                            .foregroundColor(.white)
-                            .opacity(self.switchingCamera ? 1 : 0)
-                        }
-                        .sheet(isPresented: $takePhotoClicked) {
-                            loadBackImage()
-                        } content: {
-                            ImagePicker(image: $selectedBackImage)
-                        }
+                    } else {
+                        RoundedRectangle(cornerRadius: 12)
+                            .foregroundColor(.gray)
+                            .frame(
+                                width: UIScreen.main.bounds.width,
+                                height: UIScreen.main.bounds.height * 0.6
+                            )
+                            .overlay {
+                                VStack {
+                                    ProgressView()
+                                    Text("Wait, wait, wait, now smile")
+                                }
+                                .foregroundColor(.white)
+                                .opacity(self.switchingCamera ? 1 : 0)
+                            }
+                            .sheet(isPresented: $takePhotoClicked) {
+                                loadBackImage()
+                            } content: {
+                                ImagePicker(image: $selectedBackImage)
+                            }
+                    }
 
                     VStack {
                         HStack(alignment: .center, spacing: 18) {
