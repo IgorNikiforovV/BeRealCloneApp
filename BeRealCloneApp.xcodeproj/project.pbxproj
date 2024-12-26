@@ -194,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				AC8F85342CCF604100C5A650 /* Extensions.swift */,
-				AC93AE382D13E8D600FFDFB0 /* ImagePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,8 +260,9 @@
 				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
-				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
 				AC5412102D1A84710091E634 /* CameraView.swift */,
+				AC93AE382D13E8D600FFDFB0 /* ImagePicker.swift */,
+				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
 			);
 			path = BeRealCloneApp;
 			sourceTree = "<group>";
