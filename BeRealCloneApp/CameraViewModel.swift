@@ -24,7 +24,7 @@ final class CameraViewModel: ObservableObject {
         }
     }
 
-    func postBereal(frontImageUrl: String, backImageUrl: String) async {
+    func postBereal(backImageUrl: String, frontImageUrl: String) async {
         let db = Firestore.firestore()
 
         let date = Date.now

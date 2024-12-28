@@ -19,6 +19,12 @@ struct CameraView: View {
     @State private var selectedFrontImage: UIImage?
     @State var frontIamge: Image?
 
+    @ObservedObject var viewModel: CameraViewModel
+
+    init(viewModel: CameraViewModel) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         VStack {
             ZStack {
@@ -173,7 +179,17 @@ struct CameraView: View {
     }
 
     func send() {
-        print("All send")
+        if let selectedBackImage, let selectedFrontImage {
+            viewModel.takePhoto(backImage: selectedBackImage, frontImage: selectedFrontImage) { bakcImageUrl, frontImageUrl in
+                do {
+                    Task {
+                        await viewModel.postBereal(backImageUrl: bakcImageUrl, frontImageUrl: frontImageUrl)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }
 
