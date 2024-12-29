@@ -137,7 +137,8 @@
 		AC07E5BA2CBCEB31005A1593 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */,
+				AC93AE382D13E8D600FFDFB0 /* ImagePicker.swift */,
+				AC93AE2C2D12905600FFDFB0 /* ImageUploader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +160,8 @@
 		AC4C614C2CF19F7400EDC6A2 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
+				AC07E5BB2CBCEB5A005A1593 /* ThreeDots.swift */,
 				AC217EFC2CD4AAEF00C5B45F /* SearchBar.swift */,
 				AC4C614D2CF19F9500EDC6A2 /* WhiteButtonView.swift */,
 			);
@@ -176,10 +179,44 @@
 				AC38E2082CCA1FFF00C743B5 /* EditProfileView.swift */,
 				AC85FE332CD20430002375D7 /* TimeZoneView.swift */,
 				AC93D8C42CE5D3A700979348 /* OtherView.swift */,
-				ACA20D312CE86472007283DD /* ChevronButtonView.swift */,
 				AC7BBA842CEF36A000BE8C83 /* NotificationsView.swift */,
 			);
 			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		AC8BCFD32D215953001050A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */,
+				ACAF00222D1E81DE000DDFE5 /* CameraViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC8BCFD42D215AEC001050A2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				ACC99F032CB5B3F6009CE17D /* FeedView.swift */,
+				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		AC8BCFD52D215BD6001050A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACDACDDD2CBF946900A953C8 /* Profile.swift */,
+				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
+				AC4C614C2CF19F7400EDC6A2 /* Items */,
+				AC217EF72CD4A8BD00C5B45F /* LeftMenu */,
+				ACBC88E92D0A16FA008EFDB2 /* MainView.swift */,
+				ACEF96F72CB504E800E19B31 /* ContentView.swift */,
+				AC5412102D1A84710091E634 /* CameraView.swift */,
+				AC8BCFD42D215AEC001050A2 /* Feed */,
+				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
+				ACBEE3A92CFADA23009D090F /* Authentication */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AC8CE3062CF79117008C2DA4 /* Countries */ = {
@@ -203,9 +240,9 @@
 		AC93AE2B2D12903900FFDFB0 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				AC8CE3062CF79117008C2DA4 /* Countries */,
 				ACBC88E72D0A1148008EFDB2 /* User.swift */,
 				ACD5366A2D022B42007F7F9B /* Year.swift */,
-				AC93AE2C2D12905600FFDFB0 /* ImageUploader.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -242,29 +279,16 @@
 		ACEF96F42CB504E800E19B31 /* BeRealCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */,
 				AC18AA0E2D06C8850054A540 /* Info.plist */,
 				AC18AA0A2D057AC90054A540 /* GoogleService-Info.plist */,
-				AC8CE3062CF79117008C2DA4 /* Countries */,
-				AC4C614C2CF19F7400EDC6A2 /* Items */,
-				AC217EF72CD4A8BD00C5B45F /* LeftMenu */,
 				AC8F85332CCF602B00C5A650 /* Extensions */,
 				AC07E5BA2CBCEB31005A1593 /* Helpers */,
-				ACEF96F52CB504E800E19B31 /* BeRealCloneAppApp.swift */,
-				ACBC88E92D0A16FA008EFDB2 /* MainView.swift */,
-				ACEF96F72CB504E800E19B31 /* ContentView.swift */,
-				ACC99F032CB5B3F6009CE17D /* FeedView.swift */,
-				ACDACDDD2CBF946900A953C8 /* Profile.swift */,
-				ACDACE232CC0DB3200A953C8 /* MemoryView.swift */,
-				AC093D462CBA4022004D3C8B /* FeedCell.swift */,
-				ACBEE3A92CFADA23009D090F /* Authentication */,
-				ACFAD2D52D00235A0064964B /* AuthenticationViewModel.swift */,
+				AC8BCFD52D215BD6001050A2 /* View */,
 				AC93AE2B2D12903900FFDFB0 /* Entities */,
-				AC7BBA862CEF3B3000BE8C83 /* SettingsView */,
+				AC8BCFD32D215953001050A2 /* ViewModel */,
 				ACEF96F92CB504EA00E19B31 /* Assets.xcassets */,
 				ACEF96FB2CB504EA00E19B31 /* BeRealCloneApp.entitlements */,
-				AC5412102D1A84710091E634 /* CameraView.swift */,
-				ACAF00222D1E81DE000DDFE5 /* CameraViewModel.swift */,
-				AC93AE382D13E8D600FFDFB0 /* ImagePicker.swift */,
 				ACEF96FC2CB504EA00E19B31 /* Preview Content */,
 			);
 			path = BeRealCloneApp;
