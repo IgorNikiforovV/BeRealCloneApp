@@ -13,6 +13,15 @@ struct FeedView: View {
 
     @EnvironmentObject var viewModel: AuthenticationViewModel
 
+    @State var cameraViewPresented = false
+
+    @ObservedObject var feedModel: FeedViewModel
+
+    init(feedModel: FeedViewModel, menu: Binding<MainMenu>) {
+        self.feedModel = feedModel
+        self._mainMenu = menu
+    }
+
     var body: some View {
         VStack {
             ZStack {
@@ -60,8 +69,11 @@ struct FeedView: View {
                                         ThreeDots(size: 3, color: .gray)
                                     }
                                 }
-                                ForEach(1..<8) { _ in
+                                ForEach(self.feedModel.bereals, id: \.backImageUrl) { bereal in
                                     FeedCell()
+                                        .onAppear {
+                                            print("BEREAL: \(bereal.username)")
+                                        }
                                 }
                             }
                             .padding(.top, 80)
@@ -126,6 +138,21 @@ struct FeedView: View {
                                 }
                             }
                             Spacer()
+
+                            HStack {
+                                VStack {
+                                    Image(systemName: "circle")
+                                        .font(.system(size: 80))
+                                    Text("Post a late BeReal.")
+                                        .font(.system(size: 14))
+                                        .fontWeight(.bold)
+                                }
+                                .foregroundColor(.white)
+                                .padding(.bottom, 12)
+                                .onTapGesture {
+                                    cameraViewPresented.toggle()
+                                }
+                            }
                         }
                     }
             }
@@ -133,9 +160,14 @@ struct FeedView: View {
                 KingfisherManager.shared.cache.clearMemoryCache()
             }
         }
+        .fullScreenCover(isPresented: $cameraViewPresented) {
+
+        } content: {
+            CameraView(viewModel: CameraViewModel(user: AuthenticationViewModel.shared.currentUser!))
+        }
     }
 }
 
-#Preview {
-    FeedView(mainMenu: .constant(.feed))
-}
+//#Preview {
+//    FeedView(mainMenu: .constant(.feed))
+//}
