@@ -6,14 +6,46 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeedCell: View {
+    var bereal: BeReal
+    var blur: Bool
+
+    @ObservedObject var viewModel: FeedCellViewModel
+
+    init(bereal: BeReal, blur: Bool, viewModel: FeedCellViewModel) {
+        self.bereal = bereal
+        self.blur = blur
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             VStack(alignment: .leading) {
                 // USRENAME
                 HStack {
+                    if let userUrl = viewModel.bereal.user?.profileImageUrl {
+                        KFImage(URL(string: userUrl))
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(20)
+
+                    } else {
+                        Circle()
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(20)
+                            .foregroundColor(Color(red: 152/255, green: 163/255, blue: 16/255))
+                            .overlay {
+                                Text(viewModel.bereal.username.prefix(1).uppercased())
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 18))
+                            }
+                    }
+
+                    /// ---- Added code here
+
                     Image("photo")
                         .resizable()
                         .frame(width: 40, height: 40)
@@ -90,6 +122,6 @@ struct FeedCell: View {
     }
 }
 
-#Preview {
-    FeedCell()
-}
+//#Preview {
+//    FeedCell()
+//}
