@@ -11,6 +11,8 @@ import Firebase
 final class FeedViewModel: ObservableObject {
     @Published var bereals = [BeReal]()
 
+    @Published var blur = true
+
     let user: User
 
     init(user: User) {
