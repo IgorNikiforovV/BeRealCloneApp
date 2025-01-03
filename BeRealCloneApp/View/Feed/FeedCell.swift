@@ -31,7 +31,6 @@ struct FeedCell: View {
                             .resizable()
                             .frame(width: 40, height: 40)
                             .cornerRadius(20)
-
                     } else {
                         Circle()
                             .frame(width: 40, height: 40)
@@ -44,17 +43,15 @@ struct FeedCell: View {
                             }
                     }
 
-                    /// ---- Added code here
-
-                    Image("photo")
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(20)
-                    VStack(alignment: .leading) {
-                        Text("igor")
+                    if let user = viewModel.bereal.user {
+                        Text(user.fullname)
                             .foregroundStyle(.white)
                             .fontWeight(.semibold)
                             .font(.system(size: 16))
+                    }
+
+                    VStack(alignment: .leading) {
+
                         Text("Perm •  5 hr late")
                             .foregroundStyle(.white)
                             .font(.system(size: 14))
@@ -86,10 +83,15 @@ struct FeedCell: View {
                     .zIndex(1)
 
                     VStack {
-                        Image("back")
+                        
+                        KFImage(URL(string: bereal.backImageUrl))
                             .resizable()
+                            .frame(width: UIScreen.main.bounds.width)
                             .scaledToFit()
                             .cornerRadius(20)
+
+                        // Added here
+
                         HStack {
                             Text("Add a comment...")
                                 .foregroundStyle(.gray)
