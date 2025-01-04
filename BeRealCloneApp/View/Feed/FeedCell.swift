@@ -60,63 +60,114 @@ struct FeedCell: View {
                 .padding(.horizontal)
 
                 // IMAGE
-                ZStack {
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
+                VStack(alignment: .leading) {
+                    ZStack {
+                        ZStack {
                             VStack {
-                                Image(systemName: "bubble.left.fill")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 25))
-                                    .shadow(color: .black, radius: 3, x: 1, y: 1)
-                                Image(systemName: "face.smiling.fill")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 25))
-                                    .shadow(color: .black, radius: 3, x: 1, y: 1)
-                                    .padding(.top, 15)
+                                Spacer()
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Image(systemName: "bubble.left.fill")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 25))
+                                            .shadow(color: .black, radius: 3, x: 1, y: 1)
+                                        Image(systemName: "face.smiling.fill")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 25))
+                                            .shadow(color: .black, radius: 3, x: 1, y: 1)
+                                            .padding(.top, 15)
+                                    }
+                                    .padding(.trailing, 20)
+                                    .padding(.bottom, 50)
+                                }
                             }
-                            .padding(.trailing, 20)
-                            .padding(.bottom, 50)
+                            .zIndex(1)
+
+                            VStack {
+                                KFImage(URL(string: bereal.backImageUrl))
+                                    .resizable()
+                                    .frame(width: UIScreen.main.bounds.width)
+                                    .scaledToFit()
+                                    .cornerRadius(20)
+
+                                GeometryReader { g in
+                                    VStack {
+                                        HStack {
+                                            KFImage(URL(string: bereal.frontImageUrl))
+                                                .resizable()
+                                                .scaledToFit()
+                                                .cornerRadius(8)
+                                                .frame(height: 160)
+                                                .overlay {
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                        .stroke(.black, lineWidth: 3)
+                                                }
+                                                .padding(.leading)
+
+                                            Spacer()
+                                        }
+                                        .padding(.top, 18)
+                                        Spacer()
+                                    }
+                                }
+
+        //                        HStack {
+        //                            Text("Add a comment...")
+        //                                .foregroundStyle(.gray)
+        //                                .fontWeight(.semibold)
+        //                                .padding(.leading, 8)
+        //                            Spacer()
+        //                        }
+                            }
+        //                    VStack {
+        //                        HStack {
+        //                            RoundedRectangle(cornerRadius: 10)
+        //                                .foregroundColor(.black)
+        //                                .frame(width: 125, height: 165)
+        //                                .overlay(
+        //                                    Image("me")
+        //                                        .resizable()
+        //                                        .scaledToFit()
+        //                                        .cornerRadius(8)
+        //                                        .frame(width: 120, height: 160))
+        //                                .padding(.horizontal)
+        //                            Spacer()
+        //                        }
+        //                        .padding(.top, 18)
+        //                        Spacer()
+        //                    }
+                        }
+
+                        if blur {
+                            VStack {
+                                Image(systemName: "eye.slash.fill")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 30))
+                                Text("Post to view")
+                                    .foregroundStyle(.white)
+                                    .fontWeight(.semibold)
+                                    .padding(.top, 4)
+                                Text("To view your friends' BeReal, share yours with them.").foregroundStyle(.white)
+                                    .font(.system(size: 14))
+                                    .padding(.top, -4)
+                                RoundedRectangle(cornerRadius: 12)
+                                    .foregroundColor(.white)
+                                    .frame(width: 180, height: 40)
+                                    .overlay {
+                                        Text("Post a Late BeReal")
+                                            .foregroundStyle(.black)
+                                            .font(.system(size: 12))
+                                    }
+                                    .padding(.top, 6)
+                            }
                         }
                     }
-                    .zIndex(1)
 
-                    VStack {
-                        
-                        KFImage(URL(string: bereal.backImageUrl))
-                            .resizable()
-                            .frame(width: UIScreen.main.bounds.width)
-                            .scaledToFit()
-                            .cornerRadius(20)
-
-                        // Added here
-
-                        HStack {
-                            Text("Add a comment...")
-                                .foregroundStyle(.gray)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 8)
-                            Spacer()
-                        }
-                    }
-                    VStack {
-                        HStack {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.black)
-                                .frame(width: 125, height: 165)
-                                .overlay(
-                                    Image("me")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .cornerRadius(8)
-                                        .frame(width: 120, height: 160))
-                                .padding(.horizontal)
-                            Spacer()
-                        }
-                        .padding(.top, 18)
-                        Spacer()
-                    }
+                    Text(blur ? "" : "Add a comment...")
+                        .foregroundStyle(.gray)
+                        .fontWeight(.semibold)
+                        .padding(.leading, 4)
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: 600)
