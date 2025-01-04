@@ -70,7 +70,11 @@ struct FeedView: View {
                                     }
                                 }
                                 ForEach(self.feedModel.bereals, id: \.backImageUrl) { bereal in
-                                    FeedCell()
+                                    FeedCell(
+                                        bereal: bereal,
+                                        blur: feedModel.blur,
+                                        viewModel: FeedCellViewModel(bereal: bereal)
+                                    )
                                         .onAppear {
                                             print("BEREAL: \(bereal.username)")
                                         }
