@@ -43,19 +43,22 @@ struct FeedCell: View {
                             }
                     }
 
-                    if let user = viewModel.bereal.user {
-                        Text(user.fullname)
-                            .foregroundStyle(.white)
-                            .fontWeight(.semibold)
-                            .font(.system(size: 16))
-                    }
-
                     VStack(alignment: .leading) {
+                        if let user = viewModel.bereal.user {
+                            Text(user.fullname)
+                                .foregroundStyle(.white)
+                                .fontWeight(.semibold)
+                                .font(.system(size: 16))
+                        }
 
-                        Text("Perm •  5 hr late")
+                        Text("Perm • 5 hr late")
                             .foregroundStyle(.white)
                             .font(.system(size: 14))
                     }
+
+                    Spacer()
+
+                    ThreeDots(size: 4, color: .gray)
                 }
                 .padding(.horizontal)
 
@@ -84,60 +87,37 @@ struct FeedCell: View {
                             }
                             .zIndex(1)
 
-                            VStack {
+                            VStack(alignment: .leading) {
                                 KFImage(URL(string: bereal.backImageUrl))
                                     .resizable()
                                     .frame(width: UIScreen.main.bounds.width)
                                     .scaledToFit()
                                     .cornerRadius(20)
 
-                                GeometryReader { g in
-                                    VStack {
-                                        HStack {
-                                            KFImage(URL(string: bereal.frontImageUrl))
-                                                .resizable()
-                                                .scaledToFit()
-                                                .cornerRadius(8)
-                                                .frame(height: 160)
-                                                .overlay {
-                                                    RoundedRectangle(cornerRadius: 10)
-                                                        .stroke(.black, lineWidth: 3)
-                                                }
-                                                .padding(.leading)
+                            }
 
-                                            Spacer()
-                                        }
-                                        .padding(.top, 18)
+                            GeometryReader { g in
+                                VStack {
+                                    HStack {
+                                        KFImage(URL(string: bereal.frontImageUrl))
+                                            .resizable()
+                                            .scaledToFit()
+                                            .cornerRadius(8)
+                                            .frame(height: 160)
+                                            .overlay {
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(.black, lineWidth: 3)
+                                            }
+                                            .padding(.leading)
+
                                         Spacer()
                                     }
+                                    .padding(.top, 18)
+                                    Spacer()
                                 }
-
-        //                        HStack {
-        //                            Text("Add a comment...")
-        //                                .foregroundStyle(.gray)
-        //                                .fontWeight(.semibold)
-        //                                .padding(.leading, 8)
-        //                            Spacer()
-        //                        }
                             }
-        //                    VStack {
-        //                        HStack {
-        //                            RoundedRectangle(cornerRadius: 10)
-        //                                .foregroundColor(.black)
-        //                                .frame(width: 125, height: 165)
-        //                                .overlay(
-        //                                    Image("me")
-        //                                        .resizable()
-        //                                        .scaledToFit()
-        //                                        .cornerRadius(8)
-        //                                        .frame(width: 120, height: 160))
-        //                                .padding(.horizontal)
-        //                            Spacer()
-        //                        }
-        //                        .padding(.top, 18)
-        //                        Spacer()
-        //                    }
                         }
+                        .blur(radius: blur ? 8 : 0)
 
                         if blur {
                             VStack {
