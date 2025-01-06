@@ -13,6 +13,7 @@ final class FeedCellViewModel: ObservableObject {
 
     init(bereal: BeReal) {
         self.bereal = bereal
+        fetchBeRealUser()
     }
 
     func fetchBeRealUser() {

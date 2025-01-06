@@ -71,12 +71,14 @@ final class AuthenticationViewModel: ObservableObject {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationCode, verificationCode: otpText)
 
             let result = try await Auth.auth().signIn(with: credential)
+            let phone = "+\(country.phoneCode)\(phoneNumber)"
 
             let db = Firestore.firestore()
             db.collection("users").document(result.user.uid).setData([
                 "fullname": name,
                 "date": year.date,
-                "id": result.user.uid
+                "id": result.user.uid,
+                "phone": phone
             ]) { err in
                 if let err {
                     print(err.localizedDescription)
@@ -87,7 +89,11 @@ final class AuthenticationViewModel: ObservableObject {
                 self.isLoading = false
                 let user = result.user
                 self.userSession = user
-                self.currentUser = User(fullname: name, date: year.date)
+                self.currentUser = User(
+                    fullname: name,
+                    date: year.date,
+                    phone: phone
+                )
                 print("🚩 user.uid: \(user.uid)")
             }
         } catch {
