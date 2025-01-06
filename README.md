@@ -7,5 +7,6 @@ Clone of famous app Be Real with photos &amp; Friendly daily
 - Images Loadung
 - MVVM
 
-<img width="1180" alt="image" src="https://github.com/user-attachments/assets/7fb406d3-f92e-4129-8a82-f92bcb878bc0" />
+<img width="880" alt="image" src="https://github.com/user-attachments/assets/44893b4d-d6d2-42e2-a940-6cf5b5c80258" />
+
 
