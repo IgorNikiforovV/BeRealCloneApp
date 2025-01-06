@@ -336,6 +336,7 @@ struct EditProfileView: View {
         fullname: "Igor Niki",
         date: "09.10.1985",
         bio: "XXX",
-        location: "Moscow"
+        location: "Moscow",
+        phone: "+79195656653"
     ) )
 }

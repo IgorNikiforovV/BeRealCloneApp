@@ -11,7 +11,7 @@ import Firebase
 final class FeedViewModel: ObservableObject {
     @Published var bereals = [BeReal]()
 
-    @Published var blur = true
+    @Published var blur = false
 
     let user: User
 
@@ -33,7 +33,9 @@ final class FeedViewModel: ObservableObject {
 
         do {
             let data = try await db.collection("posts").document(date).collection("bereals").getDocuments()
-            self.bereals = data.documents.compactMap { try? $0.data(as: BeReal.self) }
+            DispatchQueue.main.async {
+                self.bereals = data.documents.compactMap { try? $0.data(as: BeReal.self) }
+            }
         } catch {
             print(error.localizedDescription)
         }
